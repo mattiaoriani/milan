@@ -10,7 +10,7 @@ import {Router} from '@angular/router';
 export class HallOfFameComponent implements OnInit {
 
   footballers:Object;
-
+ //commento a caso di prova
   constructor(private uploadData:UploadDataService,private router:Router) { }
 
   ngOnInit() {
