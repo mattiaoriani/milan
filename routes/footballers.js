@@ -11,8 +11,8 @@ router.post('/registerFootballer', (req, res, next) => {
     description: req.body.description,
     photoPath: req.body.photoPath,
     mediaPath: req.body.mediaPath,
-    apperances:req.body.apperances,
-    goals:req.body.goals
+    statics:req.body.statics,
+    trophiesWon:req.body.trophiesWon
   });
 
   Footballer.addFootballer(newFootballer, (err, footballer) => {

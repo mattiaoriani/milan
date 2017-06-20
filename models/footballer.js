@@ -17,17 +17,32 @@ const UserSchema = mongoose.Schema({
     required: true
   },
   photoPath: {
-    type: String,
-    required: true
+    normal:{
+      type: String
+    },
+    small: {
+      type: String
+    },
   },
   mediaPath: {
     type: String
   },
-  apperances: {
-    type: Number
-  },
-  goals: {
-    type: Number
+  statics: [{
+    year:{
+      type: String
+    },
+    apperances: {
+      type: Number
+    },
+    goals: {
+      type: Number
+    },
+    assists: {
+      type: Number
+    }
+  }],
+  trophiesWon: {
+    type: String
   }
 });
 
