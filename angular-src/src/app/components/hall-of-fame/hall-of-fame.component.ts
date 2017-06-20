@@ -5,7 +5,7 @@ import {Router} from '@angular/router';
 @Component({
   selector: 'app-hall-of-fame',
   templateUrl: './hall-of-fame.component.html',
-  styleUrls: ['./hall-of-fame.component.css']
+  styleUrls: ['./hall-of-fame.component.scss']
 })
 export class HallOfFameComponent implements OnInit {
 
