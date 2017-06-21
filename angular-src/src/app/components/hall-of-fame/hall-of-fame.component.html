@@ -1,10 +1,36 @@
 <div *ngFor="let footballer of footballers">
   <h2 class="page-header">{{footballer.name}} {{footballer.surname}}</h2>
+  <div class="container">
   <div class="row">
-    <img class="info" src={{footballer.photoPath}} alt="footballer photo">
-    <ul class="info">
-      <li class="list-group-item">Name: {{footballer.name}}</li>
-      <li class="list-group-item">Surname: {{footballer.surname}}</li>
-    </ul>
+    <div class="col-md-4">
+        <img class="fb-image" src={{footballer.photoPath.normal}} alt="footballer photo">
+        <img class="fb-image-small" src={{footballer.photoPath.small}} alt="footballer photo">
+    </div>
+    <div class="col-md-4 fb-info">
+      <ul class="info">
+        <li class="list-group-item">Name: <strong>{{footballer.name}}</strong></li>
+        <li class="list-group-item">Surname: <strong>{{footballer.surname}}</strong></li>
+        <li class="list-group-item">Data di nascita: <strong>{{footballer.dateBorn}}</strong></li>
+        <li class="list-group-item">Trofei vinti col Milan: <strong>{{footballer.trophiesWon}}</strong></li>
+      </ul>
+    </div>
   </div>
+</div>
+    <h2 class="page-header">Caratteristiche</h2>
+    <a class="list-group-item">{{footballer.description}}</a>
+    <h2 class="page-header">Carriera nel Milan</h2>
+      <table>
+        <tr>
+          <th>Year</th>
+          <th>Appearances</th>
+          <th>Goals</th>
+          <th>Assists</th>
+        </tr>
+        <tr *ngFor="let stat of footballer.statics">
+          <td>{{stat.year}}</td>
+          <td>{{stat.apperances}}</td>
+          <td>{{stat.goals}}</td>
+          <td>{{stat.assists}}</td>
+        </tr>
+      </table>
 </div>

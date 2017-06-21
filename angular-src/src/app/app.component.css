@@ -1,0 +1,12 @@
+@font-face{
+    font-family: milanfont;
+    src: url(../assets/fonts/milantype.woff2);
+}
+@font-face {
+  font-family: milanbold;
+  src: url(../assets/fonts/raleway-bold-webfont.woff2);
+}
+@font-face {
+  font-family: milanregular;
+  src: url(../assets/fonts/raleway-regular-webfont.woff2);
+}
