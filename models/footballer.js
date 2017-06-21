@@ -9,8 +9,15 @@ const UserSchema = mongoose.Schema({
     type: String
   },
   dateBorn: {
-    type: Date,
-    required: true
+    year:{
+      type: Number
+    },
+    month: {
+      type: Number
+    },
+    day: {
+      type: Number
+    },
   },
   description: {
     type: String,
@@ -41,9 +48,14 @@ const UserSchema = mongoose.Schema({
       type: Number
     }
   }],
-  trophiesWon: {
-    type: String
-  }
+  trophiesWon: [{
+    name: {
+      type: String
+    },
+    numberofWin: {
+      type: Number
+    }
+  }]
 });
 
 const Footballer = module.exports = mongoose.model('Footballer', UserSchema);

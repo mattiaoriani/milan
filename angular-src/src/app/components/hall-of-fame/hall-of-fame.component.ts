@@ -11,7 +11,6 @@ export class HallOfFameComponent implements OnInit {
 
   footballers:Array<String>;
 
- //commento a caso di prova
   constructor(private uploadData:UploadDataService,private router:Router) { }
 
   ngOnInit() {
@@ -23,5 +22,22 @@ export class HallOfFameComponent implements OnInit {
       return false;
     });
   }
+
+  getSumAppearences(footballer) {
+    let total = 0;
+    for(var i = 0; i < footballer["statics"].length; i++){
+        total +=footballer["statics"][i]["apperances"];
+    }
+    return total;
+  }
+
+  getSumGoals(footballer) {
+    let total = 0;
+    for(var i = 0; i < footballer["statics"].length; i++){
+        total +=footballer["statics"][i]["goals"];
+    }
+    return total;
+  }
+
 
 }
