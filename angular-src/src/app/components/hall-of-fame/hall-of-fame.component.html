@@ -1,3 +1,6 @@
+<div class="content">
+  <img class="logo" src="../../assets/logo.png" alt="logo">
+</div>
 <div class="content" *ngFor="let footballer of footballers">
   <h2 class="page-header">{{footballer.name}} {{footballer.surname}}</h2>
   <div class="container">
@@ -12,29 +15,43 @@
         <li class="list-group-item">Surname: <strong>{{footballer.surname}}</strong></li>
         <li class="list-group-item">Data di nascita: <strong>{{footballer.dateBorn.day}}-{{footballer.dateBorn.month}}-{{footballer.dateBorn.year}}</strong></li>
         <li class="list-group-item">Trofei vinti col Milan: <strong>NUMERO TROFEI VINTI</strong></li>
-        <li class="list-group-item">Presenze col Milan: <strong>{{getSumAppearences(footballer)}}</strong></li>
-        <li class="list-group-item">Gol col Milan: <strong>{{getSumGoals(footballer)}}</strong></li>
+        <div class="list-group-item">
+          <img class="stats img-stats" src="../../assets/hall-of-fame/presenze.png" alt="icon-appearences">
+          <li class="stats">Presenze totali: <strong>{{getSumAppearences(footballer)}}</strong></li>
+        </div>
+        <div class="list-group-item">
+          <img class="stats img-stats" src="../../assets/hall-of-fame/goal.png" alt="icon-appearences">
+          <li class="stats">Gol totali: <strong>{{getSumGoals(footballer)}}</strong></li>
+        </div>
       </ul>
     </div>
   </div>
 </div>
-    <h2 class="page-header">Palmares col Milan</h2>
-    <li *ngFor="let trophy of footballer.trophiesWon" class="list-group-item">{{trophy.name}}: {{trophy.numberofWin}}</li>
-    <h2 class="page-header">Caratteristiche</h2>
-    <a class="list-group-item">{{footballer.description}}</a>
-    <h2 class="page-header">Carriera nel Milan</h2>
-      <table>
-        <tr>
-          <th>Year</th>
-          <th>Appearances</th>
-          <th>Goals</th>
-          <th>Assists</th>
-        </tr>
-        <tr *ngFor="let stat of footballer.statics">
-          <td>{{stat.year}}</td>
-          <td>{{stat.apperances}}</td>
-          <td>{{stat.goals}}</td>
-          <td>{{stat.assists}}</td>
-        </tr>
-      </table>
+    <div class="palmares">
+      <h2 class="page-header">Palmares col Milan</h2>
+      <div class="content-trofeo" *ngFor="let trophy of footballer.trophiesWon">
+        <li class="list-group-item trofeo">{{trophy.name}}: {{trophy.numberofWin}}</li>
+      </div>
+    </div>
+    <div class="biography">
+      <h2 class="page-header">Caratteristiche</h2>
+      <a class="list-group-item">{{footballer.description}}</a>
+    </div>
+    <div class="carriera">
+      <h2 class="page-header">Carriera nel Milan</h2>
+        <table>
+          <tr>
+            <th>Year</th>
+            <th>Appearances</th>
+            <th>Goals</th>
+            <th>Assists</th>
+          </tr>
+          <tr *ngFor="let stat of footballer.statics">
+            <td>{{stat.year}}</td>
+            <td>{{stat.apperances}}</td>
+            <td>{{stat.goals}}</td>
+            <td>{{stat.assists}}</td>
+          </tr>
+        </table>
+      </div>
 </div>

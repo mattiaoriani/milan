@@ -1,7 +1,16 @@
 .title{
   font-family: milanfont;
 }
+.logo{
+  width: 75px;
+  height: 75px;
+}
+.img-feature{
+  width: 50px;
+  height: 50px;
+}
 .features{
+  margin-top:10px;
   font-family: milanbold;
 }
 .lead,
@@ -11,17 +20,15 @@
 .btn{
   font-family: milanfont;
 }
-.homepage {
+.jumbotron {
+  background-color: inherit;
+  color: #f4f4f4;
   background-image: url(../../../assets/header.png);
   background-position: center;
   background-repeat: no-repeat;
   background-origin: content-box;
-  border-radius: 5px;
-}
-
-.jumbotron {
-  background-color: inherit;
-  color: #f4f4f4;
+  border-radius: 10px;
+  max-width: 1600px;
 }
 
 .col-md-4 {
@@ -36,4 +43,19 @@
   width: 75px;
   height: 75px;
   padding-bottom: 10%;
+}
+
+@media only screen and (min-width: 800px) {
+  .jumbotron {
+    margin: 0% 15% 2% 15%;
+    height: 650px;
+    text-align: center;
+  }
+  .jumbotron-content{
+    padding-top: 5%;
+  }
+  .logo{
+    width: 150px;
+    height: 150px;
+  }
 }
