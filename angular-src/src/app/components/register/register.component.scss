@@ -1,0 +1,18 @@
+.input{
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.page-header,
+.btn-primary{
+  font-family:milanfont;
+}
+.form-group{
+  font-family: milanregular;
+}
+
+@media only screen and (min-width: 800px) {
+  .input{
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+}

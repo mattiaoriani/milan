@@ -1,4 +1,9 @@
 /* For width smaller than 400px: */
+.content{
+  padding-left: 5%;
+  padding-right: 5%;
+  font-family: milanregular;
+}
 .btn-dashboard {
   border-radius: 5px;
   cursor: pointer;
@@ -23,5 +28,9 @@
   }
   .btn-dashboard:hover{
     background: linear-gradient(rgba(168,0,0,0.5),rgba(168,0,0,0.5)), url('img_flowers.jpg');
+  }
+  .content{
+    padding-left: 20%;
+    padding-right: 20%;
   }
 }
