@@ -13,6 +13,14 @@ export class HallOfFameComponent implements OnInit {
 
   constructor(private uploadData:UploadDataService,private router:Router) { }
 
+  config: Object = {
+            pagination: '.swiper-pagination',
+            paginationClickable: true,
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+            spaceBetween: 30
+  };
+
   ngOnInit() {
     this.uploadData.getAllFootballers().subscribe(result => {
       this.footballers = result.footballer;
