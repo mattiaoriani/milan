@@ -20,7 +20,7 @@ export class HallOfFameComponent implements OnInit {
             paginationClickable: true,
             nextButton: '.swiper-button-next',
             prevButton: '.swiper-button-prev',
-            spaceBetween: 30
+            spaceBetween: 0
   };
 
   ngOnInit() {
