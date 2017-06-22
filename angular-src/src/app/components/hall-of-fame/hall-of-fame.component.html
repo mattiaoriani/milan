@@ -30,10 +30,10 @@
     <div class="palmares">
       <h2 class="page-header">Palmares col Milan</h2>
       <div *ngIf="checkIfHasThrophy(footballer)">
-        <div class="content-trofeo" *ngFor="let trophy of footballer.trophiesWon">
-          <li class="list-group-item trofeo">{{trophy.name}}: {{trophy.numberofWin}}
-            <img class="trophyPic" src={{getThrophyPath(trophy)}} alt="trophy-icon" >
-          </li>
+        <div class="col-md-4 content-trofeo" *ngFor="let trophy of footballer.trophiesWon">
+          <img class="trofeo trophyPic" src={{getThrophyPath(trophy)}} alt="trophy-icon" >
+          <li class="list-group-item trofeo numerovittorie"><strong>{{trophy.numberofWin}}</strong></li>
+          <li class="list-group-item trofeo">{{trophy.name}}</li>
         </div>
     </div>
     </div>

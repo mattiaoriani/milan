@@ -41,14 +41,14 @@ export class HallOfFameComponent implements OnInit {
 
   getThrophyPath(trophy) {
     switch(trophy.name){
-      case "Serie A": return "../../assets/hall-of-fame/scudetto.png";
-      case "UEFA Champion's League": return "../../assets/hall-of-fame/championsleague.png";
-      case "Coppa Italia": return "../../assets/hall-of-fame/coppaitalia.png";
+      case "Scudetto Serie A": return "../../assets/hall-of-fame/scudetto.png";
+      case "Champions League": return "../../assets/hall-of-fame/championsleague.png";
+      case "Coppa Italia TIM": return "../../assets/hall-of-fame/coppaitalia.png";
       case "UEFA Supercup": return "../../assets/hall-of-fame/supercoppaeuropea.png";
       case "FIFA Club's World Cup": return "../../assets/hall-of-fame/fifaworldcup.png";
       case "Supercoppa Italiana": return "../../assets/hall-of-fame/supercoppaitaliana.png";
       case "Coppa Intercontinentale": return "../../assets/hall-of-fame/intercontinentale.png";
-      case "FIFA World Player Of The Year": return "../../assets/hall-of-fame/pallonedoro.png";
+      case "FIFA Pallone d'oro": return "../../assets/hall-of-fame/pallonedoro.png";
       default : return "../../assets/hall-of-fame/presenze.png";;
     }
   }

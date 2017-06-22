@@ -5,8 +5,11 @@
   width: 75px;
   height: 75px;
 }
-.page-header,th{
+.page-header,th,.numerovittorie{
   font-family: milanfont;
+}
+.numerovittorie{
+  font-size: 20px;
 }
 li,a,td{
   font-family: milanregular;
@@ -37,6 +40,7 @@ ul{
   background: none;
   border: none;
   padding-left: 0px;
+  padding-right: 0px;
 }
 .col-md-4{
   width:auto;
@@ -69,6 +73,20 @@ ul{
 .content-trofeo{
   margin-top: 2%;
   margin-bottom: 2%;
+  padding-left: 0px;
+  padding-right: 0px;
+  display: inline-block;
+  width: 30%;
+}
+.trophyPic{
+  margin: auto;
+  width: 70px;
+  height: 70px;
+}
+.trofeo{
+  text-align: center;
+  display: block;
+  width: auto;
 }
 /* For width 400px and larger: */
 @media only screen and (min-width: 800px) {
@@ -93,15 +111,21 @@ ul{
   .fb-image-small{
     display: none;
   }
-  .palmares{
+  .palmares,
+  .biography{
     display: block;
     clear:both;
   }
-  .content-trofeo{
-    padding: 2% 10%;
-    display: inline;
-  }
   .trofeo{
     display: inline;
+  }
+  .trophyPic{
+    width: 70px;
+    height: 70px;
+  }
+  .content-trofeo{
+    padding: 2%;
+    display: inline;
+    width: 33,33333% !important;
   }
 }
