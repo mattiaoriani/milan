@@ -3,7 +3,7 @@
 </div>
 <swiper [config]="config">
 <div class="swiper-wrapper">
-  <div class="content" *ngFor="let footballer of footballers">
+  <div class="swiper-slide" *ngFor="let footballer of footballers">
     <h2 class="page-header">{{footballer.name}} {{footballer.surname}}</h2>
     <div class="container">
     <div class="row">
@@ -75,4 +75,4 @@
   <!-- Add Arrows -->
   <div class="swiper-button-next"></div>
   <div class="swiper-button-prev"></div>
-  </swiper>
+</swiper>

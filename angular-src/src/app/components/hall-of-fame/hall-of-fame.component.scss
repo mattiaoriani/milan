@@ -56,11 +56,11 @@ ul{
 .fb-image{
   display: none;
 }
-.content{
+.swiper-slide{
   padding-left: 5%;
   padding-right: 5%;
 }
-.content-stats{
+.swiper-slide-stats{
   padding-left: 0px;
 }
 .stats{
@@ -70,7 +70,7 @@ ul{
   width: 50px;
   height: 50px;
 }
-.content-trofeo{
+.swiper-slide-trofeo{
   margin-top: 2%;
   margin-bottom: 2%;
   padding-left: 0px;
@@ -78,6 +78,7 @@ ul{
   display: inline-block;
   width: 30%;
 }
+
 .trophyPic{
   margin: auto;
   width: 70px;
@@ -88,9 +89,14 @@ ul{
   display: block;
   width: auto;
 }
+
+.swiper{
+    height: 100%;
+    width: 100%;
+}
 /* For width 400px and larger: */
 @media only screen and (min-width: 800px) {
-  .content{
+  .swiper-slide{
     padding-left: 20%;
     padding-right: 20%;
   }
@@ -123,7 +129,7 @@ ul{
     width: 70px;
     height: 70px;
   }
-  .content-trofeo{
+  .swiper-slide-trofeo{
     padding: 2%;
     display: inline;
     width: 33,33333% !important;
