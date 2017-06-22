@@ -11,10 +11,14 @@
     </div>
     <div class="col-md-4 fb-info">
       <ul class="info">
-        <li class="list-group-item">Name: <strong>{{footballer.name}}</strong></li>
-        <li class="list-group-item">Surname: <strong>{{footballer.surname}}</strong></li>
-        <li class="list-group-item">Data di nascita: <strong>{{footballer.dateBorn.day}}-{{footballer.dateBorn.month}}-{{footballer.dateBorn.year}}</strong></li>
-        <li class="list-group-item">Trofei vinti col Milan: <strong>NUMERO TROFEI VINTI</strong></li>
+        <div class="list-group-item">
+          <img class="stats img-stats" src="../../assets/hall-of-fame/presenze.png" alt="icon-appearences">
+          <li class="stats">Data di nascita: <strong>{{footballer.dateBorn.day}}.{{footballer.dateBorn.month}}.{{footballer.dateBorn.year}}</strong></li>
+        </div>
+        <div class="list-group-item">
+          <img class="stats img-stats" src="../../assets/hall-of-fame/presenze.png" alt="icon-appearences">
+          <li class="stats">Numero di maglia: <strong>{{getSumAppearences(footballer)}}</strong></li>
+        </div>
         <div class="list-group-item">
           <img class="stats img-stats" src="../../assets/hall-of-fame/presenze.png" alt="icon-appearences">
           <li class="stats">Presenze totali: <strong>{{getSumAppearences(footballer)}}</strong></li>
@@ -22,6 +26,10 @@
         <div class="list-group-item">
           <img class="stats img-stats" src="../../assets/hall-of-fame/goal.png" alt="icon-appearences">
           <li class="stats">Gol totali: <strong>{{getSumGoals(footballer)}}</strong></li>
+        </div>
+        <div class="list-group-item">
+          <img class="stats img-stats" src="../../assets/hall-of-fame/presenze.png" alt="icon-appearences">
+          <li class="stats">Nazionalità: <strong>{{getSumAppearences(footballer)}}</strong></li>
         </div>
       </ul>
     </div>
