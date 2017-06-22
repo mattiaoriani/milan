@@ -8,6 +8,8 @@ router.post('/registerFootballer', (req, res, next) => {
     name:req.body.name,
     surname: req.body.surname,
     dateBorn:req.body.dateBorn,
+    nationality: req.body.nationality,
+    numberShirt: req.body.numberShirt,
     description: req.body.description,
     photoPath: req.body.photoPath,
     mediaPath: req.body.mediaPath,

@@ -19,6 +19,12 @@ const UserSchema = mongoose.Schema({
       type: Number
     },
   },
+  nationality: {
+    type: String
+  },
+  numberShirt: {
+    type: Number
+  },
   description: {
     type: String,
     required: true

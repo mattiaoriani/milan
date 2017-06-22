@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component, OnInit, Input, Output, OnChanges, EventEmitter,
+  trigger, state, style, animate, transition } from '@angular/core';
 import {AuthService} from '../../services/auth.service';
 import {Router} from '@angular/router';
 import {FlashMessagesService} from 'angular2-flash-messages';
@@ -6,11 +8,27 @@ import {FlashMessagesService} from 'angular2-flash-messages';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
+  animations: [
+    trigger('dialog', [
+      transition('void => *', [
+        style({ transform: 'scale3d(.3, .3, .3)' }),
+        animate(100)
+      ]),
+      transition('* => void', [
+        animate(100, style({ transform: 'scale3d(.0, .0, .0)' }))
+      ])
+    ])
+  ]
 })
 export class LoginComponent implements OnInit {
   username: String;
   password: String;
+
+  @Input() closable = true;
+  @Input() visible: boolean;
+  @Output() visibleChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+
 
   constructor(
     private authService:AuthService,
@@ -41,6 +59,11 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['login']);
       }
     });
+  }
+
+  close() {
+    this.visible = false;
+    this.visibleChange.emit(this.visible);
   }
 
 }

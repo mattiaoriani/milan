@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {RouterModule, Routes} from '@angular/router';
 import { MaterialModule } from '@angular/material';
+import { SwiperModule } from 'angular2-useful-swiper';
 
 
 import { AppComponent } from './app.component';
@@ -16,6 +17,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { HistoryComponent } from './components/history/history.component';
 import { TrophiesComponent } from './components/trophies/trophies.component';
 import { HallOfFameComponent } from './components/hall-of-fame/hall-of-fame.component';
+
 
 import {ValidateService} from './services/validate.service';
 import {AuthService} from './services/auth.service';
@@ -46,7 +48,7 @@ const appRoutes: Routes =  [
     ProfileComponent,
     HistoryComponent,
     TrophiesComponent,
-    HallOfFameComponent
+    HallOfFameComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,7 +56,8 @@ const appRoutes: Routes =  [
     FormsModule,
     HttpModule,
     RouterModule.forRoot(appRoutes),
-    FlashMessagesModule
+    FlashMessagesModule,
+    SwiperModule
   ],
   providers: [ValidateService, AuthService, AuthGuard,UploadDataService],
   bootstrap: [AppComponent]
