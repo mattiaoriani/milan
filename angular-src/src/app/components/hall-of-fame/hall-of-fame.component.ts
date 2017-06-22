@@ -11,8 +11,6 @@ export class HallOfFameComponent implements OnInit {
 
   footballers:Array<String>;
 
-  lino:boolean;
-
   constructor(private uploadData:UploadDataService,private router:Router) { }
 
   config: Object = {
@@ -62,9 +60,6 @@ export class HallOfFameComponent implements OnInit {
       default : return "../../assets/hall-of-fame/presenze.png";;
     }
   }
-
-pino:boolean;
-
   checkIfHasThrophy(footballer){
     var size = Object.keys(footballer["trophiesWon"]).length;
     if(size==0){

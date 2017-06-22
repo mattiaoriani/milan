@@ -1,7 +1,7 @@
-<div class="content">
-  <img class="logo" src="../../assets/logo.png" alt="logo">
-</div>
 <swiper [config]="config">
+  <div class="content">
+    <img class="logo" src="../../assets/logo.png" alt="logo">
+  </div>
 <div class="swiper-wrapper">
   <div class="swiper-slide" *ngFor="let footballer of footballers">
     <h2 class="page-header">{{footballer.name}} {{footballer.surname}}</h2>
@@ -14,11 +14,11 @@
       <div class="col-md-4 fb-info">
         <ul class="info">
           <div class="list-group-item">
-            <img class="stats img-stats" src="../../assets/hall-of-fame/presenze.png" alt="icon-appearences">
+            <img class="stats img-stats" src="../../assets/hall-of-fame/datanascita.png" alt="icon-appearences">
             <li class="stats">Data di nascita: <strong>{{footballer.dateBorn.day}}.{{footballer.dateBorn.month}}.{{footballer.dateBorn.year}}</strong></li>
           </div>
           <div class="list-group-item">
-            <img class="stats img-stats" src="../../assets/hall-of-fame/presenze.png" alt="icon-appearences">
+            <img class="stats img-stats" src="../../assets/hall-of-fame/numeromaglia.png" alt="icon-appearences">
             <li class="stats">Numero di maglia: <strong>{{footballer.numberShirt}}</strong></li>
           </div>
           <div class="list-group-item">
@@ -30,7 +30,7 @@
             <li class="stats">Gol totali: <strong>{{getSumGoals(footballer)}}</strong></li>
           </div>
           <div class="list-group-item">
-            <img class="stats img-stats" src="../../assets/hall-of-fame/presenze.png" alt="icon-appearences">
+            <img class="stats img-stats" src="../../assets/hall-of-fame/nazionalita.png" alt="icon-appearences">
             <li class="stats">Nazionalità: <strong>{{footballer.nationality}}</strong></li>
           </div>
         </ul>
