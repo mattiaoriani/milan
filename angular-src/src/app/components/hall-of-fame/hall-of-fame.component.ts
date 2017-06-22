@@ -11,6 +11,8 @@ export class HallOfFameComponent implements OnInit {
 
   footballers:Array<String>;
 
+  lino:boolean;
+
   constructor(private uploadData:UploadDataService,private router:Router) { }
 
   config: Object = {
