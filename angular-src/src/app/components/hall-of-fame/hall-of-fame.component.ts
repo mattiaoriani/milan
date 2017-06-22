@@ -61,6 +61,8 @@ export class HallOfFameComponent implements OnInit {
     }
   }
 
+pino:boolean;
+
   checkIfHasThrophy(footballer){
     var size = Object.keys(footballer["trophiesWon"]).length;
     if(size==0){
