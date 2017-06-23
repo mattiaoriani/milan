@@ -35,7 +35,7 @@ const appRoutes: Routes =  [
   {path:'history', component: HistoryComponent},
   {path:'trophies', component: TrophiesComponent},
   {path:'hall-of-fame', component:HallOfFameComponent},
-  {path:'singlehistory', component:SingleHistoryComponent}
+  {path:'singlehistory/:id', component:SingleHistoryComponent}
 ]
 
 @NgModule({

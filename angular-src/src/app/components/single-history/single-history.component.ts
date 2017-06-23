@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {UploadDataService} from '../../services/upload-data.service';
+import {ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-single-history',
@@ -8,9 +9,10 @@ import {UploadDataService} from '../../services/upload-data.service';
 })
 export class SingleHistoryComponent implements OnInit {
 
-  history:Array<String>;
+  history:string;
+  puppa:Object;
 
-  constructor(private uploadData:UploadDataService) { }
+  constructor(private uploadData:UploadDataService, private router:ActivatedRoute) { }
 
   config: Object = {
             pagination: '.swiper-pagination',
@@ -21,13 +23,12 @@ export class SingleHistoryComponent implements OnInit {
   };
 
   ngOnInit() {
-    this.uploadData.getAllStories().subscribe(result => {
-      this.history = result.stories;
-    },
-    err => {
-      console.log(err);
-      return false;
-    });
+      this.router.params.subscribe(params => this.history =params["id"]);
+      console.log(this.history);
+      this.puppa = JSON.parse(this.history);
+      console.log(this.puppa);
+
+
   }
 
 }

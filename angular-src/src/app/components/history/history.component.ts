@@ -23,4 +23,8 @@ export class HistoryComponent implements OnInit {
     });
   }
 
+  getFilter(singleHistory){
+    return JSON.stringify(singleHistory);
+  }
+
 }
