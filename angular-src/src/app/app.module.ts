@@ -17,7 +17,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { HistoryComponent } from './components/history/history.component';
 import { TrophiesComponent } from './components/trophies/trophies.component';
 import { HallOfFameComponent } from './components/hall-of-fame/hall-of-fame.component';
-
+import { SingleHistoryComponent } from './components/single-history/single-history.component';
 
 import {ValidateService} from './services/validate.service';
 import {AuthService} from './services/auth.service';
@@ -34,7 +34,8 @@ const appRoutes: Routes =  [
   {path:'profile', component: ProfileComponent, canActivate:[AuthGuard]},
   {path:'history', component: HistoryComponent},
   {path:'trophies', component: TrophiesComponent},
-  {path:'hall-of-fame', component:HallOfFameComponent}
+  {path:'hall-of-fame', component:HallOfFameComponent},
+  {path:'singlehistory', component:SingleHistoryComponent}
 ]
 
 @NgModule({
@@ -49,6 +50,7 @@ const appRoutes: Routes =  [
     HistoryComponent,
     TrophiesComponent,
     HallOfFameComponent,
+    SingleHistoryComponent,
   ],
   imports: [
     BrowserModule,

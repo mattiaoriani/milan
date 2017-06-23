@@ -1,0 +1,27 @@
+<div class="content" *ngFor="let singleStory of history">
+
+  <h2 class="page-header">{{singleStory.name}}</h2>
+
+  <div class="history-item">
+
+  <swiper [config]="config">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img class="story-img" src={{singleStory.photoPath.normal}} alt="story-img">
+            </div>
+            <div class="swiper-slide" *ngFor="let photo of singleStory.additionalPhotoPath">
+              <img class="story-img" src={{photo.path}} alt="story-img">
+            </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+  </swiper>
+    <div class="description">
+      <p>{{singleStory.description.long}}</p>
+    </div>
+
+  </div>
+
+</div>
