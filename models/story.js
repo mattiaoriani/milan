@@ -7,7 +7,7 @@ const UserSchema = mongoose.Schema({
   },
   year: {
     initial:{
-      type: Number
+      type: Number,
       required: true
     },
     final: {
@@ -37,7 +37,7 @@ const UserSchema = mongoose.Schema({
       type: String
     },
     description: {
-      type: Number
+      type: String
     }
   }],
   mediaPath: {
