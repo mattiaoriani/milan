@@ -2,18 +2,6 @@
   font-family: milanfont;
 }
 
-.brand-centered {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  width: 100%;
-  left: 0;
-  top: 0;
-}
-.brand-centered{
-  display: flex;
-  align-items: center;
-}
 .navbar-toggle {
     z-index: 1;
 }
@@ -24,7 +12,8 @@ navbar-alignit .navbar-header {
   transform-style: preserve-3d;
   height: 50px;
 }
-.navbar-alignit{
+
+.navbar-alignit {
 	top: 50%;
 	display: block;
 	position: relative;
@@ -34,7 +23,16 @@ navbar-alignit .navbar-header {
   margin-left: 15px;
 }
 
+.navbar-brand{
+  padding: 5px;
+  width: 220px;
+}
 .navbar-brand>img {
-  float: left;
-  height: 70%;
+  float:left;
+  margin-right: 5px;
+  height: 100%;
+}
+.navbar-title{
+  padding-top: 5px;
+  height: 30px;
 }

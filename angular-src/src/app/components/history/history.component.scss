@@ -6,19 +6,27 @@ img {
   border: 0;
   max-width: 100%;
 }
-
-.page-header h1 {
-  font-size: 3.26em;
-  text-align: center;
-  color: #efefef;
-  text-shadow: 1px 1px 0 #000;
+.content{
+  padding-top: 1%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 10%;
+  font-family: milanregular;
 }
-
+.page-header{
+  margin-top: 18px;
+  font-family: milanfont;
+}
+ul{
+  margin-bottom: 0px;
+}
 /** timeline box structure **/
 
 .timeline {
   list-style: none;
-  padding: 20px 0 20px;
+  padding-top: 20px;
+  padding-left: 0px;
+  padding-right: 0px;
   position: relative;
   &:before {
     top: 0;
@@ -46,7 +54,7 @@ img {
 }
 
 .timeline li {
-  margin-bottom: 25px;
+  margin-top: 25px;
   position: relative;
   &:before {
     content: " ";
@@ -125,13 +133,13 @@ img {
     top: 23px;
     left: 50%;
     text-align: center;
-    background: #6a8db3;
+    background: #c25b4e;
     color: #fff;
     width: 35px;
     height: 35px;
     line-height: 35px;
     margin-left: -16px;
-    border: 3px solid #90acc7;
+    border: 3px solid #ab483b;
     border-top-right-radius: 50%;
     border-top-left-radius: 50%;
     border-bottom-right-radius: 50%;
@@ -162,6 +170,11 @@ img {
   }
 }
 
+@media only screen and (min-width: 800px) {
+  .content{
+    padding: 1% 20%;
+  }
+}
 /** media queries **/
 @media (max-width: 991px) {
   .timeline li .timeline-panel {
@@ -170,9 +183,6 @@ img {
 }
 
 @media (max-width: 700px) {
-  .page-header h1 {
-    font-size: 1.8em;
-  }
   ul.timeline:before {
     left: 40px;
   }
