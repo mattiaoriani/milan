@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {UploadDataService} from '../../services/upload-data.service';
+
 
 @Component({
   selector: 'app-history',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HistoryComponent implements OnInit {
 
-  constructor() { }
+  history:Array<String>;
+
+  constructor(private uploadData:UploadDataService) { }
 
   ngOnInit() {
+    this.uploadData.getAllStories().subscribe(result => {
+      this.history = result.stories;
+    },
+    err => {
+      console.log(err);
+      return false;
+    });
   }
 
 }

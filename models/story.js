@@ -14,8 +14,12 @@ const UserSchema = mongoose.Schema({
     required: true
   },
   photoPath: {
-    type: String,
-    required: true
+    normal:{
+      type: String
+    },
+    small: {
+      type: String
+    },
   },
   mediaPath: {
     type: String
@@ -27,6 +31,12 @@ const Story = module.exports = mongoose.model('Story', UserSchema);
 module.exports.getStoryByYear = function(year, callback){
   const query = {year: year}
   Story.findOne(query, callback);
+}
+
+module.exports.addStory = function(newStory, callback){
+      newStory.save(function(err, newStory){
+        if(err) return console.error(err);
+      });
 }
 
 module.exports.getUserByName = function(name, callback){
