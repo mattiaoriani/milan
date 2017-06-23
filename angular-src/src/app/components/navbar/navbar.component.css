@@ -10,7 +10,7 @@
   left: 0;
   top: 0;
 }
-.brand-centered .navbar-brand {
+.brand-centered{
   display: flex;
   align-items: center;
 }
@@ -24,7 +24,7 @@ navbar-alignit .navbar-header {
   transform-style: preserve-3d;
   height: 50px;
 }
-.navbar-alignit .navbar-brand {
+.navbar-alignit{
 	top: 50%;
 	display: block;
 	position: relative;
@@ -34,11 +34,7 @@ navbar-alignit .navbar-header {
   margin-left: 15px;
 }
 
-.navbar-brand {
-  padding: 0px;
-}
 .navbar-brand>img {
-  height: 100%;
-  padding: 15px;
-  width: auto;
+  float: left;
+  height: 70%;
 }
