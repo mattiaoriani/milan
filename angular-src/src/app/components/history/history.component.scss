@@ -6,9 +6,10 @@ img {
   border: 0;
   max-width: 100%;
 }
+
 .content{
   padding-top: 1%;
-  padding-left: 5%;
+  padding-left: 15px;
   padding-right: 5%;
   padding-bottom: 10%;
   font-family: milanregular;
@@ -39,18 +40,30 @@ ul{
     margin-left: -1.5px;
   }
 }
-
-.tldate {
+.year{
+  margin:auto;
+  padding-top: 20px;
+  font-weight: bold;
+}
+.tldate,
+.tldate-odd {
   display: block;
-  width: 200px;
-  background: #414141;
-  border: 3px solid #212121;
-  color: #ededed;
-  margin: 0 auto;
+  height: 55px;
+  width: 82px;
+  background-image: url("../../../assets/history/calendar-icons.png");
+  background-position: center;
+  color: black;
   padding: 3px 0;
   font-weight: bold;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
   text-align: center;
-  -webkit-box-shadow: 0 0 11px rgba(0, 0, 0, 0.35);
+  margin-left: -16px;
+  z-index: 99999;
+}
+.tldate-odd{
+  margin-left: -70px !important;
 }
 
 .timeline li {
@@ -128,24 +141,6 @@ ul{
       right: auto;
     }
   }
-  .tl-circ {
-    position: absolute;
-    top: 23px;
-    left: 50%;
-    text-align: center;
-    background: #c25b4e;
-    color: #fff;
-    width: 35px;
-    height: 35px;
-    line-height: 35px;
-    margin-left: -16px;
-    border: 3px solid #ab483b;
-    border-top-right-radius: 50%;
-    border-top-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-    border-bottom-left-radius: 50%;
-    z-index: 99999;
-  }
 }
 
 /** timeline panels **/
@@ -158,6 +153,7 @@ ul{
 
 .tl-heading h4 {
   margin: 0;
+  margin-bottom:2px;
   color: #c25b4e;
 }
 
@@ -186,8 +182,14 @@ ul{
   ul.timeline:before {
     left: 40px;
   }
-  .tldate {
-    width: 140px;
+  .tldate,
+  .tldate-odd {
+    height: 54px;
+    width: 70px;
+    top: 12px;
+    left: 0px;
+    margin-left: 0px !important;
+    margin-right: 10px;
   }
   ul.timeline {
     li {
@@ -196,16 +198,8 @@ ul{
         width: -moz-calc(100% - 90px);
         width: -webkit-calc(100% - 90px);
       }
-      .tl-circ {
-        top: 22px;
-        left: 22px;
-        margin-left: 0;
-      }
     }
     > li > {
-      .tldate {
-        margin: 0;
-      }
       .timeline-panel {
         float: right;
         &:before {
