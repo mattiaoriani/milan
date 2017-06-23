@@ -9,6 +9,7 @@ router.post('/registerStory', (req, res, next) => {
     year: req.body.year,
     description: req.body.description,
     photoPath: req.body.photoPath,
+    additionalPhotoPath: req.body.additionalPhotoPath,
     mediaPath: req.body.mediaPath
   });
 

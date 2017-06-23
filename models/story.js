@@ -6,12 +6,23 @@ const UserSchema = mongoose.Schema({
     type: String
   },
   year: {
-    type: Number,
-    required: true
+    initial:{
+      type: Number
+      required: true
+    },
+    final: {
+      type: Number
+    }
   },
   description: {
-    type: String,
-    required: true
+    small: {
+      type:  String,
+      required: true
+    },
+    long: {
+      type:  String,
+      required: true
+    },
   },
   photoPath: {
     normal:{
@@ -21,6 +32,14 @@ const UserSchema = mongoose.Schema({
       type: String
     },
   },
+  additionalPhotoPath: [{
+    path: {
+      type: String
+    },
+    description: {
+      type: Number
+    }
+  }],
   mediaPath: {
     type: String
   }
