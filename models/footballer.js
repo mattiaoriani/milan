@@ -29,6 +29,10 @@ const UserSchema = mongoose.Schema({
     type: String,
     required: true
   },
+  coverImg: {
+    type: String,
+    required: true
+  },
   photoPath: {
     normal:{
       type: String

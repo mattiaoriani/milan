@@ -5,21 +5,29 @@ const UserSchema = mongoose.Schema({
   name: {
     type: String
   },
-  dateWin: {
-    type: Date,
-    required: true
-  },
-  description: {
+  coverImg: {
     type: String,
     required: true
   },
-  photoPath: {
-    type: String,
-    required: true
-  },
-  mediaPath: {
-    type: String
-  }
+  trophiesWon: [{
+    year:{
+      type: Number
+    },
+    description: {
+      type: String
+    },
+    photoList: [{
+      path:{
+        type: String
+      },
+      description: {
+        type: String
+      }
+    }],
+    mediaPath: {
+      type: String
+    }
+  }]
 });
 
 const Trophy = module.exports = mongoose.model('Trophy', UserSchema);
@@ -29,9 +37,10 @@ module.exports.getTrophyByDate = function(dateWin, callback){
   Trophy.findOne(query, callback);
 }
 
-module.exports.getUserByName = function(name, callback){
-  const query = {name: name}
-  Trophy.findOne(query, callback);
+module.exports.addTrophy = function(newTrophy, callback){
+      newTrophy.save(function(err, newTrophy){
+        if(err) return console.error(err);
+      });
 }
 
 module.exports.getAllTrophies = function(bo, callback){

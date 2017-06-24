@@ -12,6 +12,7 @@ router.post('/registerFootballer', (req, res, next) => {
     numberShirt: req.body.numberShirt,
     description: req.body.description,
     photoPath: req.body.photoPath,
+    coverImg: req.body.coverImg,
     mediaPath: req.body.mediaPath,
     statics:req.body.statics,
     trophiesWon:req.body.trophiesWon
