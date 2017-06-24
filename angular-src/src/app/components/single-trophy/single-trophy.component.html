@@ -1,0 +1,18 @@
+<div class="content">
+  <a class="btn btn-primary" [routerLink]="['/trophies']">Go Back</a>
+  <h2 class="page-header">{{trophy.name}}</h2>
+
+  <div class="trophy-item" *ngFor="let winner of trophy.trophiesWon">
+    <swiper [config]="config">
+      <div class="swiper-wrapper">
+          <div class="swiper-slide">
+          </div>
+      </div>
+      <div class="swiper-pagination"></div>
+
+      <div class="description">
+        <p>{{history.description.long}}</p>
+      </div>
+    </swiper>
+  </div>
+</div>

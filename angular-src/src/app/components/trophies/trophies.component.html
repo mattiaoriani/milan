@@ -4,9 +4,9 @@
   <p>Explore all the trophies.</p>
 
   <div class="row">
-    <div class="col-md-4"   *ngFor="let trophy of trophies">
-      <p>ciao</p>
-      <button class="btn-dashboard">{{trophy.name}}<div class="layer"></div></button>
+    <div class="col-md-4" *ngFor="let trophy of trophies">
+      <button class="btn-dashboard" [routerLink]="['/singletrophy', getFilter(trophy)]"
+        [ngStyle]="{'background-image': 'url(' + trophy.coverImg + ')'}">{{trophy.name}}<div class="layer"></div></button>
     </div>
   </div>
 </div>

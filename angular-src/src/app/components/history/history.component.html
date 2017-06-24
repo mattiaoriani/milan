@@ -1,4 +1,5 @@
 <div class="content">
+  <a class="btn btn-primary" [routerLink]="['/dashboard']">Go Back</a>
   <h2 class="page-header">History</h2>
   <ul class="timeline" *ngFor="let singleStory of history;odd as isOdd">
     <li *ngIf="!isOdd" >

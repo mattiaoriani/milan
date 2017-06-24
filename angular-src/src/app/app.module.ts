@@ -19,12 +19,14 @@ import { TrophiesComponent } from './components/trophies/trophies.component';
 import { HallOfFameComponent } from './components/hall-of-fame/hall-of-fame.component';
 import { SingleHistoryComponent } from './components/single-history/single-history.component';
 import { SingleFootballerComponent } from './components/single-footballer/single-footballer.component';
+import { SingleTrophyComponent } from './components/single-trophy/single-trophy.component';
 
 import {ValidateService} from './services/validate.service';
 import {AuthService} from './services/auth.service';
 import {UploadDataService} from './services/upload-data.service';
 import {FlashMessagesModule} from 'angular2-flash-messages';
 import {AuthGuard} from './guards/auth.guard';
+
 
 
 const appRoutes: Routes =  [
@@ -37,7 +39,8 @@ const appRoutes: Routes =  [
   {path:'trophies', component: TrophiesComponent},
   {path:'hall-of-fame', component:HallOfFameComponent},
   {path:'singlehistory/:id', component:SingleHistoryComponent},
-  {path:'singlefootballer/:id', component:SingleFootballerComponent}
+  {path:'singlefootballer/:id', component:SingleFootballerComponent},
+  {path:'singletrophy/:id', component:SingleTrophyComponent}
 ]
 
 @NgModule({
@@ -54,6 +57,7 @@ const appRoutes: Routes =  [
     HallOfFameComponent,
     SingleHistoryComponent,
     SingleFootballerComponent,
+    SingleTrophyComponent,
   ],
   imports: [
     BrowserModule,

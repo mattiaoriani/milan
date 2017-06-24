@@ -15,8 +15,7 @@ export class TrophiesComponent implements OnInit {
 
   ngOnInit() {
     this.uploadData.getAllTrophies().subscribe(result => {
-      this.trophies = result.trophy;
-      console.log(this.trophies);
+      this.trophies = result.trophies;
     },
     err => {
       console.log(err);
@@ -24,5 +23,8 @@ export class TrophiesComponent implements OnInit {
     });
   }
 
+  getFilter(singleTrophy){
+    return JSON.stringify(singleTrophy);
+  }
 
 }
