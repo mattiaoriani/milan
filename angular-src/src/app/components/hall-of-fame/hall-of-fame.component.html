@@ -2,10 +2,21 @@
   <h2 class="page-header">Hall Of Fame</h2>
   <div class="row">
     <div class="col-md-4" *ngFor="let footballer of footballers">
-      <button class="btn-dashboard history" [routerLink]="['/singlefootballer', getFilter(footballer)]">
+      <button
+        class="btn-dashboard"
+        [routerLink]="['/singlefootballer', getFilter(footballer)]"
+        [ngStyle]="{'background-image': 'url(' + footballer.coverImg + ')'}">
         {{footballer.name}} {{footballer.surname}}
         <div class="layer"></div>
       </button>
     </div>
   </div>
 </div>
+
+
+<!-- (mouseover)="hover=true" (mouseleave)="hover=false"
+[ngStyle]="hover ?
+            {'background': 'linear-gradient(rgba(168,0,0,0.5),rgba(168,0,0,0.5)), url(' + footballer.coverImg + ')',
+             'background-position': 'center',
+             'background-size': 'cover'} :
+             {'background-image': 'url(' + footballer.coverImg + ')'}"-->
