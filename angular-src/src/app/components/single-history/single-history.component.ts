@@ -17,7 +17,7 @@ export class SingleHistoryComponent implements OnInit {
             pagination: '.swiper-pagination',
             slidesPerView: 1,
             paginationClickable: true,
-            spaceBetween: 30,
+            spaceBetween: 10,
             freeMode: true
   };
 

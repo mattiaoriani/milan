@@ -1,8 +1,12 @@
-<h2 class="page-header">{{history.name}}</h2>
+<div class="content">
+  <h2 class="page-header">{{history.name}}</h2>
 
   <div class="history-item">
   <swiper [config]="config">
     <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img class="story-img" src={{history.photoPath.normal}}>
+        </div>
         <div class="swiper-slide" *ngFor="let photo of history.additionalPhotoPath">
           <img class="story-img" src={{photo.path}} alt="story-img">
         </div>
@@ -12,5 +16,5 @@
     <div class="description">
       <p>{{history.description.long}}</p>
     </div>
-
   </div>
+</div>

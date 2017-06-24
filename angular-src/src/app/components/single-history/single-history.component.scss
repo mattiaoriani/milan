@@ -19,8 +19,17 @@
     padding: 1% 10%;
   }
 }
+.description{
+  margin-top: 2%;
+}
+.story-img{
+  margin: auto;
+  align-content: center;
 
+}
 .swiper-slide {
+    width: auto !important;
+    height: 400px;
     text-align: center;
     font-size: 18px;
     background: #fff;

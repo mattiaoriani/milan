@@ -82,7 +82,13 @@ ul{
     content: " ";
     display: table;
   }
+  .timeline-panel:hover{
+    h4{
+      font-weight: bold;
+    }
+  }
   .timeline-panel {
+    cursor: pointer;
     width: 46%;
     float: left;
     background: #fff;
