@@ -1,18 +1,16 @@
-<h2 class="page-header">{{puppa.name}}</h2>
+<h2 class="page-header">{{history.name}}</h2>
 
   <div class="history-item">
   <swiper [config]="config">
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide" *ngFor="let photo of puppa.additionalPhotoPath">
-              <img class="story-img" src={{photo.path}} alt="story-img">
-            </div>
+    <div class="swiper-wrapper">
+        <div class="swiper-slide" *ngFor="let photo of history.additionalPhotoPath">
+          <img class="story-img" src={{photo.path}} alt="story-img">
         </div>
-        <div class="swiper-pagination"></div>
     </div>
+    <div class="swiper-pagination"></div>
   </swiper>
     <div class="description">
-      <p>{{puppa.description.long}}</p>
+      <p>{{history.description.long}}</p>
     </div>
 
   </div>
