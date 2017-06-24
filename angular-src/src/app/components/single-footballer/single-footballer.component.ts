@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import {UploadDataService} from '../../services/upload-data.service';
-import {Router} from '@angular/router';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
-  selector: 'app-hall-of-fame',
-  templateUrl: './hall-of-fame.component.html',
-  styleUrls: ['./hall-of-fame.component.scss']
+  selector: 'app-single-footballer',
+  templateUrl: './single-footballer.component.html',
+  styleUrls: ['./single-footballer.component.scss']
 })
-export class HallOfFameComponent implements OnInit {
+export class SingleFootballerComponent implements OnInit {
 
-  footballers:Array<String>;
+  footballer:Object;
 
-  constructor(private uploadData:UploadDataService,private router:Router) { }
+  constructor(private uploadData:UploadDataService,private router:ActivatedRoute) { }
 
   config: Object = {
             pagination: '.swiper-pagination',
@@ -22,13 +22,7 @@ export class HallOfFameComponent implements OnInit {
   };
 
   ngOnInit() {
-    this.uploadData.getAllFootballers().subscribe(result => {
-      this.footballers = result.footballer;
-    },
-    err => {
-      console.log(err);
-      return false;
-    });
+    this.router.params.subscribe(params => this.footballer = JSON.parse(params["id"]));
   }
 
   getSumAppearences(footballer) {
@@ -68,10 +62,5 @@ export class HallOfFameComponent implements OnInit {
       return true;
     }
   }
-
-  getFilter(footballer){
-    return JSON.stringify(footballer);
-  }
-
 
 }

@@ -18,6 +18,7 @@ import { HistoryComponent } from './components/history/history.component';
 import { TrophiesComponent } from './components/trophies/trophies.component';
 import { HallOfFameComponent } from './components/hall-of-fame/hall-of-fame.component';
 import { SingleHistoryComponent } from './components/single-history/single-history.component';
+import { SingleFootballerComponent } from './components/single-footballer/single-footballer.component';
 
 import {ValidateService} from './services/validate.service';
 import {AuthService} from './services/auth.service';
@@ -35,7 +36,8 @@ const appRoutes: Routes =  [
   {path:'history', component: HistoryComponent},
   {path:'trophies', component: TrophiesComponent},
   {path:'hall-of-fame', component:HallOfFameComponent},
-  {path:'singlehistory/:id', component:SingleHistoryComponent}
+  {path:'singlehistory/:id', component:SingleHistoryComponent},
+  {path:'singlefootballer/:id', component:SingleFootballerComponent}
 ]
 
 @NgModule({
@@ -51,6 +53,7 @@ const appRoutes: Routes =  [
     TrophiesComponent,
     HallOfFameComponent,
     SingleHistoryComponent,
+    SingleFootballerComponent,
   ],
   imports: [
     BrowserModule,

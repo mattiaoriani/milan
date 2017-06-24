@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {UploadDataService} from '../../services/upload-data.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-trophies',
@@ -10,24 +11,18 @@ export class TrophiesComponent implements OnInit {
 
   trophies:Array<String>;
 
-  constructor(private uploadData:UploadDataService) { }
+  constructor(private uploadData:UploadDataService,private router:Router) { }
 
-  config: Object = {
-            pagination: '.swiper-pagination',
-            paginationClickable: true,
-            nextButton: '.swiper-button-next',
-            prevButton: '.swiper-button-prev',
-            spaceBetween: 30
-        };
+  ngOnInit() {
+    this.uploadData.getAllTrophies().subscribe(result => {
+      this.trophies = result.trophy;
+      console.log(this.trophies);
+    },
+    err => {
+      console.log(err);
+      return false;
+    });
+  }
 
-        ngOnInit() {
-          this.uploadData.getAllTrophies().subscribe(result => {
-            this.trophies = result.trophy;
-          },
-          err => {
-            console.log(err);
-            return false;
-          });
-        }
 
 }
