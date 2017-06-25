@@ -47,7 +47,7 @@ ul{
 }
 .tldate,
 .tldate-odd {
-  display: block;
+  display: inline-block;
   height: 55px;
   width: 82px;
   background-image: url("../../../assets/history/calendar-icons.png");
@@ -55,15 +55,15 @@ ul{
   color: black;
   padding: 3px 0;
   font-weight: bold;
-  position: absolute;
   bottom: 30px;
   left: 50%;
   text-align: center;
-  margin-left: -16px;
+  margin-top: 10px;
+  margin-left: 16px;
   z-index: 99999;
 }
 .tldate-odd{
-  margin-left: -70px !important;
+  margin-left: 45% !important;
 }
 
 .timeline li {
@@ -196,6 +196,7 @@ ul{
     left: 0px;
     margin-left: 0px !important;
     margin-right: 10px;
+    margin-top: 10px;
   }
   ul.timeline {
     li {

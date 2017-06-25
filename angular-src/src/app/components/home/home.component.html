@@ -4,7 +4,9 @@
       <img class="logo" src="../../assets/logo.png" alt="logo">
       <h1 class="title">CASA MILAN Museum</h1>
       <p class="lead">Welcome to Casa</p>
-        <a class="btn btn-primary" [routerLink]="['/login']">Start the Tour</a>
+        <a *ngIf="!authService.loggedIn()" class="btn btn-primary" [routerLink]="['/login']">Start the Tour</a>
+        <a *ngIf="authService.loggedIn()" class="btn btn-primary" [routerLink]="['/login']">Dashboard</a>
+        <a *ngIf="authService.loggedIn()" class="btn btn-default" [routerLink]="['/login']">Info</a>
 
         <!--<a class="btn btn-primary" [routerLink]="['/register']">Register</a>-->
 

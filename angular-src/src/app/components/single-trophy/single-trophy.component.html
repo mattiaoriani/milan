@@ -18,29 +18,33 @@
           <swiper class="swiper-img" [config]="config">
             <div class="swiper-wrapper">
               <div class="swiper-slide winner-image" *ngFor="let img of winner.photoList">
-                <img class="winner-img" src={{img.path}} alt="winner-img">
-                <p>{{img.description}}</p>
+                <figure>
+                  <img class="winner-img" src={{img.path}} alt="winner-img">
+                  <figcaption>{{img.description}}</figcaption>
+                </figure>
               </div>
             </div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
             <div class="swiper-scrollbar"></div>
           </swiper>
-          <p>{{winner.description}}</p>
+          <p class="description">{{winner.description}}</p>
         </div>
         <div *ngIf="!isFirst" class="tab-pane fade" id="{{winner.year}}">
           <swiper class="swiper-img" [config]="config">
             <div class="swiper-wrapper">
               <div class="swiper-slide winner-image" *ngFor="let img of winner.photoList">
-                <img class="winner-img" src={{img.path}} alt="winner-img">
-                <p>{{img.description}}</p>
+                <figure>
+                  <img class="winner-img" src={{img.path}} alt="winner-img">
+                  <figcaption>{{img.description}}</figcaption>
+                </figure>
               </div>
             </div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
             <div class="swiper-scrollbar"></div>
           </swiper>
-          <p>{{winner.description}}</p>
+          <p class="description">{{winner.description}}</p>
         </div>
       </ng-container>
     </div>

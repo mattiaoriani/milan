@@ -14,11 +14,16 @@ export class SingleHistoryComponent implements OnInit {
   constructor(private uploadData:UploadDataService, private router:ActivatedRoute) { }
 
   config: Object = {
-            pagination: '.swiper-pagination',
-            slidesPerView: 1,
-            paginationClickable: true,
-            spaceBetween: 10,
-            freeMode: true
+      scrollbar: '.swiper-scrollbar',
+      scrollbarHide: true,
+      slidesPerView: 'auto',
+      centeredSlides: false,
+      spaceBetween: 0,
+      grabCursor: true,
+      pagination: '.swiper-pagination',
+      paginationClickable: true,
+      nextButton: '.swiper-button-next',
+      prevButton: '.swiper-button-prev',
   };
 
   ngOnInit() {
