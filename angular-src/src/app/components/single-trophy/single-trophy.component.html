@@ -1,18 +1,22 @@
 <div class="content">
   <a class="btn btn-primary" [routerLink]="['/trophies']">Go Back</a>
   <h2 class="page-header">{{trophy.name}}</h2>
-
-  <div class="trophy-item" *ngFor="let winner of trophy.trophiesWon">
-    <swiper [config]="config">
-      <div class="swiper-wrapper">
-          <div class="swiper-slide">
-          </div>
+  <swiper [config]="config">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide winner" *ngFor="let winner of trophy.trophiesWon">
+          <p>{{winner.year}}</p>
+          <p>{{winner.description}}
+          <swiper class="swiper-img" [config]="photoconfig">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide winner-image" *ngFor="let img of winner.photoList">
+                <img class="winner-img" src={{img.path}} alt="winner-img">
+                <p>{{img.description}}</p>
+              </div>
+            </div>
+            <div class="swiper-pagination-img"></div>
+          </swiper>
       </div>
-      <div class="swiper-pagination"></div>
-
-      <div class="description">
-        <p>{{history.description.long}}</p>
-      </div>
-    </swiper>
-  </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </swiper>
 </div>
