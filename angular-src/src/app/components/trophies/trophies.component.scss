@@ -23,6 +23,8 @@
 .col-md-4{
   padding-left: 0px;
   padding-right: 0px;
+  width: 50%;
+  float:left;
 }
 /* For width 400px and larger: */
 @media only screen and (min-width: 1400px) {
@@ -32,6 +34,9 @@
   .btn-dashboard{
     height: 200px;
   }
+  .col-md-4{
+    width: 33.33333333%;
+  }
 }
 @media only screen and (min-width: 800px) and (max-width: 1399px){
   .content{
@@ -39,5 +44,8 @@
   }
   .btn-dashboard{
     height: 200px;
+  }
+  .col-md-4{
+    width: 33.33333333%;
   }
 }
