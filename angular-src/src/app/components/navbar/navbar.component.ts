@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { ViewChild, ViewChildren, Component, QueryList, ElementRef, OnInit } from '@angular/core';
 import {AuthService} from '../../services/auth.service';
 import {Router} from '@angular/router';
 import {FlashMessagesService} from 'angular2-flash-messages';
+declare var jquery:any;
+declare var $ :any;
+
 
 @Component({
   selector: 'app-navbar',
@@ -15,7 +18,12 @@ export class NavbarComponent implements OnInit {
     private router:Router,
     private flashMessage:FlashMessagesService) { }
 
+    @ViewChild('pino') div:ElementRef;
+
+
   ngOnInit() {
+    console.log(this.div.nativeElement);
+
   }
 
   onLogoutClick(){
@@ -27,5 +35,11 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['']);
     return false;
   }
+
+  toggleNavBar(){
+     $('.navbar-toggle').click();
+  }
+
+
 
 }
