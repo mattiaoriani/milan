@@ -18,7 +18,11 @@ export class SingleTrophyComponent implements OnInit {
       slidesPerView: 'auto',
       centeredSlides: true,
       spaceBetween: 30,
-      grabCursor: true
+      grabCursor: true,
+      pagination: '.swiper-pagination',
+      paginationClickable: true,
+      nextButton: '.swiper-button-next',
+      prevButton: '.swiper-button-prev',
   };
 
 
