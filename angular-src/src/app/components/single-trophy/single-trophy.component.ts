@@ -13,20 +13,14 @@ export class SingleTrophyComponent implements OnInit {
   constructor(private router:ActivatedRoute) { }
 
   config: Object = {
-      pagination: '.swiper-pagination',
-      paginationClickable: true,
-      nextButton: '.swiper-button-next',
-      prevButton: '.swiper-button-prev',
-      spaceBetween: 0
+      scrollbar: '.swiper-scrollbar',
+      scrollbarHide: true,
+      slidesPerView: 'auto',
+      centeredSlides: true,
+      spaceBetween: 30,
+      grabCursor: true
   };
 
-  photoconfig:Object = {
-      pagination: '.swiper-pagination-img',
-      slidesPerView: 1,
-      paginationClickable: true,
-      spaceBetween: 10,
-      freeMode: true
-  }
 
   ngOnInit() {
     this.router.params.subscribe(params => this.trophy = JSON.parse(params["id"]));

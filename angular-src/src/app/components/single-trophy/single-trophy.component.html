@@ -15,32 +15,33 @@
     <div id="myTabContent" class="tab-content">
       <ng-container *ngFor="let winner of trophy.trophiesWon;first as isFirst">
         <div *ngIf="isFirst" class="tab-pane fade active in" id="{{winner.year}}">
-          <p>{{winner.description}}</p>
-          <swiper class="swiper-img" [config]="photoconfig">
+          <swiper class="swiper-img" [config]="config">
             <div class="swiper-wrapper">
               <div class="swiper-slide winner-image" *ngFor="let img of winner.photoList">
                 <img class="winner-img" src={{img.path}} alt="winner-img">
                 <p>{{img.description}}</p>
               </div>
             </div>
-            <div class="swiper-pagination-img"></div>
+            <div class="swiper-scrollbar"></div>
           </swiper>
+          <p>{{winner.description}}</p>
         </div>
         <div *ngIf="!isFirst" class="tab-pane fade" id="{{winner.year}}">
-          <p>{{winner.description}}</p>
-          <swiper class="swiper-img" [config]="photoconfig">
+          <swiper class="swiper-img" [config]="config">
             <div class="swiper-wrapper">
               <div class="swiper-slide winner-image" *ngFor="let img of winner.photoList">
                 <img class="winner-img" src={{img.path}} alt="winner-img">
                 <p>{{img.description}}</p>
               </div>
             </div>
-            <div class="swiper-pagination-img"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
           </swiper>
+          <p>{{winner.description}}</p>
         </div>
       </ng-container>
     </div>
-  </div>
+</div>
 
 
 

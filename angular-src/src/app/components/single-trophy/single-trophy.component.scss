@@ -25,6 +25,9 @@
   width:auto;
   height: auto;
 }
+.tab-content{
+  padding: 2%;
+}
 /* For width 400px and larger: */
 @media only screen and (min-width: 1400px) {
   .content{
@@ -45,7 +48,6 @@
       height: 400px;
       text-align: center;
       font-size: 18px;
-      background: #fff;
       display: -webkit-box;
       display: -ms-flexbox;
       display: -webkit-flex;
