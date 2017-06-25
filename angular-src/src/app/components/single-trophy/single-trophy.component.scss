@@ -14,6 +14,11 @@
   align-content: center;
 
 }
+.tab,
+.description-tab{
+  width:auto;
+  height: auto;
+}
 /* For width 400px and larger: */
 @media only screen and (min-width: 1400px) {
   .content{
@@ -23,6 +28,11 @@
 @media only screen and (min-width: 800px) and (max-width: 1399px){
   .content{
     padding: 1% 10%;
+
+  }
+  .winner-img{
+    max-width: 1000px !important;
+    height: auto;
   }
   .winner-image {
       max-width: 1000px !important;
