@@ -13,13 +13,13 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { ProfileComponent } from './components/profile/profile.component';
 import { HistoryComponent } from './components/history/history.component';
 import { TrophiesComponent } from './components/trophies/trophies.component';
 import { HallOfFameComponent } from './components/hall-of-fame/hall-of-fame.component';
 import { SingleHistoryComponent } from './components/single-history/single-history.component';
 import { SingleFootballerComponent } from './components/single-footballer/single-footballer.component';
 import { SingleTrophyComponent } from './components/single-trophy/single-trophy.component';
+import { InfoComponentComponent } from './components/info-component/info-component.component';
 
 import {ValidateService} from './services/validate.service';
 import {AuthService} from './services/auth.service';
@@ -34,7 +34,7 @@ const appRoutes: Routes =  [
   {path:'register', component: RegisterComponent},
   {path:'login', component: LoginComponent},
   {path:'dashboard', component: DashboardComponent, canActivate:[AuthGuard]},
-  {path:'profile', component: ProfileComponent, canActivate:[AuthGuard]},
+  {path:'info', component:InfoComponentComponent},
   {path:'history', component: HistoryComponent},
   {path:'trophies', component: TrophiesComponent},
   {path:'hall-of-fame', component:HallOfFameComponent},
@@ -51,13 +51,13 @@ const appRoutes: Routes =  [
     RegisterComponent,
     HomeComponent,
     DashboardComponent,
-    ProfileComponent,
     HistoryComponent,
     TrophiesComponent,
     HallOfFameComponent,
     SingleHistoryComponent,
     SingleFootballerComponent,
     SingleTrophyComponent,
+    InfoComponentComponent,
   ],
   imports: [
     BrowserModule,

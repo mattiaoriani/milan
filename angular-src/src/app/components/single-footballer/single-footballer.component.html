@@ -1,6 +1,7 @@
-<div class="swiper-wrapper">
-  <div class="swiper-slide">
-    <h2 class="page-header">{{footballer.name}} {{footballer.surname}}</h2>
+<div class="content">
+    <h2 class="page-header">{{footballer.name}} {{footballer.surname}}
+      <a class="btn btn-primary btn-back" [routerLink]="['/hall-of-fame']">Go Back</a>
+    </h2>
     <div class="container">
     <div class="row">
       <div class="col-md-4">
@@ -62,5 +63,4 @@
             </tr>
           </table>
         </div>
-  </div>
 </div>

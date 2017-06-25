@@ -8,6 +8,12 @@
   margin-top: 18px;
   font-family: milanfont;
 }
+.btn-back{
+  display: flex;
+  clear: none;
+  float:right;
+  padding-bottom: 8px;
+}
 /* For width 400px and larger: */
 @media only screen and (min-width: 1400px) {
   .content{

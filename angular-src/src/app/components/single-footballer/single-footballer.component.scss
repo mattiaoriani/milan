@@ -1,3 +1,9 @@
+.content{
+  padding-top: 1%;
+  padding-left: 5%;
+  padding-right: 5%;
+  font-family: milanregular;
+}
 .page-header{
   margin-top: 18px;
 }
@@ -7,6 +13,11 @@
 }
 .page-header,th,.numerovittorie{
   font-family: milanfont;
+}
+.btn-back{
+  float:right;
+  padding-bottom: 8px;
+  font-size: 13px;
 }
 .numerovittorie{
   font-size: 20px;
@@ -98,13 +109,13 @@ ul{
 }
 /* For width 400px and larger: */
 @media only screen and (min-width: 1400px) {
-  .swiper-slide{
-    padding: 1% 20% !important;
+  .content{
+    padding: 1% 20%;
   }
 }
 /* For width 400px and larger: */
 @media only screen and (min-width: 800px) {
-  .swiper-slide{
+  .content{
     padding: 1% 10%;
   }
   .info {

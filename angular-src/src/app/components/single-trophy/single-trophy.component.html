@@ -1,6 +1,7 @@
 <div class="content">
-  <a class="btn btn-primary" [routerLink]="['/trophies']">Go Back</a>
-  <h2 class="page-header">{{trophy.name}}</h2>
+  <h2 class="page-header">{{trophy.name}}
+    <a class="btn btn-primary btn-back" [routerLink]="['/trophies']">Go Back</a>
+  </h2>
     <ul class="nav nav-tabs" >
       <ng-container *ngFor="let winner of trophy.trophiesWon;first as firstElement">
         <li *ngIf="firstElement" class="active">
