@@ -37,7 +37,7 @@ export class NavbarComponent implements OnInit {
   }
 
   toggleNavBar(){
-     $('.navbar-toggle').click();
+      $('.navbar-collapse').collapse('hide');
   }
 
 
