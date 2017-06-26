@@ -5,8 +5,8 @@
       <h1 class="title">CASA MILAN Museum</h1>
       <p class="lead">Welcome to Casa</p>
         <a *ngIf="!authService.loggedIn()" class="btn btn-primary" [routerLink]="['/login']">Start the Tour</a>
-        <a *ngIf="authService.loggedIn()" class="btn btn-primary" [routerLink]="['/login']">Dashboard</a>
-        <a *ngIf="authService.loggedIn()" class="btn btn-default" [routerLink]="['/login']">Info</a>
+        <a *ngIf="authService.loggedIn()" class="btn btn-primary" [routerLink]="['/dashboard']">Dashboard</a>
+        <a *ngIf="authService.loggedIn()" class="btn btn-default" [routerLink]="['/info']">Info</a>
 
 
     </div>

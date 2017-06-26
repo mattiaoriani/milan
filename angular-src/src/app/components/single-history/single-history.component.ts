@@ -16,7 +16,8 @@ export class SingleHistoryComponent implements OnInit {
   config: Object = {
       scrollbar: '.swiper-scrollbar',
       scrollbarHide: true,
-      slidesPerView: 'auto',
+      simulateTouch:true,
+      slidesPerView: 1,
       centeredSlides: false,
       spaceBetween: 0,
       grabCursor: true,

@@ -14,21 +14,24 @@
   float:right;
   padding-bottom: 8px;
 }
+
 .swiper-slide{
   width: auto;
   height: auto;
 }
+
 .story-img{
   border-radius: 5px;
   max-height: 200px;
 }
 .swiper-button-next,
 .swiper-button-prev{
-  visibility: hidden;
+  //visibility: hidden;
 }
 .description{
   padding-top: 2%;
 }
+
 /* For width 400px and larger: */
 @media only screen and (min-width: 1400px) {
   .content{
