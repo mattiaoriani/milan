@@ -171,10 +171,16 @@ ul{
     margin-top: 5px;
   }
 }
-
+.tl-body > img {
+  margin-top: 2%;
+}
 @media only screen and (min-width: 800px) {
   .content{
     padding: 1% 10%;
+  }
+  .tl-body > img {
+    max-width: 450px;
+    border-radius: 5px;
   }
 }
 /** media queries **/
@@ -187,6 +193,10 @@ ul{
 @media (max-width: 700px) {
   ul.timeline:before {
     left: 40px;
+  }
+  .tl-body > img {
+    max-height: 200px !important;
+    border-radius: 3px;
   }
   .tldate,
   .tldate-odd {
