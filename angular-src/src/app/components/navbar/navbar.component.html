@@ -19,11 +19,10 @@
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
+            <li *ngIf="authService.isAdmin()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink]="['/register']">Admin Zone</a></li>
             <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink]="['/dashboard']" (click)="toggleNavBar()">Dashboard</a></li>
             <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink]="['/info']" (click)="toggleNavBar()">Info</a></li>
-
             <li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink]="['/login']" (click)="toggleNavBar()">Start the Tour</a></li>
-            <!--<li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink]="['/register']">Register</a></li>-->
             <li *ngIf="authService.loggedIn()"><a (click)="onLogoutClick()" (click)="toggleNavBar()" href="#">Logout</a></li>
           </ul>
         </div><!--/.nav-collapse -->

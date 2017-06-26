@@ -56,6 +56,20 @@ export class AuthService {
     return tokenNotExpired('id_token');
   }
 
+  isAdmin(){
+    if(localStorage.getItem('user') === null){
+      return false;
+    }
+    else{
+      if(JSON.parse(localStorage.getItem('user')).username === "admin"){
+        return true;
+      }else{
+        return false;
+      }
+    }
+
+  }
+
   logout(){
     this.authToken = null;
     this.user = null;
