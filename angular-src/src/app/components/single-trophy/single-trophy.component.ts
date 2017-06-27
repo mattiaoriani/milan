@@ -17,6 +17,7 @@ export class SingleTrophyComponent implements OnInit {
     scrollbarHide: true,
     slidesPerView: 'auto',
     centeredSlides: true,
+    preloadImages: false,
     grabCursor: true,
     nextButton: '.swiper-button-next',
     prevButton: '.swiper-button-prev',
