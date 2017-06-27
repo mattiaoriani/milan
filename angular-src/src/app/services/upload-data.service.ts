@@ -17,7 +17,7 @@ export class UploadDataService {
       let headers = new Headers();
       headers.append('Content-Type','application/json');
       let ep = this.prepEndpoint('footballers/footballerInfo');
-      return this.http.get('http://localhost:3000/footballers/footballerInfo',{headers: headers})
+      return this.http.get(ep,{headers: headers})
         .map(res => res.json());
     }
 
@@ -25,7 +25,7 @@ export class UploadDataService {
       let headers = new Headers();
       headers.append('Content-Type','application/json');
       let ep = this.prepEndpoint('trophies/trophies');
-      return this.http.get('http://localhost:3000/trophies/trophies',{headers: headers})
+      return this.http.get(ep,{headers: headers})
         .map(res => res.json());
     }
 
@@ -33,7 +33,7 @@ export class UploadDataService {
       let headers = new Headers();
       headers.append('Content-Type','application/json');
       let ep = this.prepEndpoint('stories/stories');
-      return this.http.get('http://localhost:3000/stories/stories',{headers: headers})
+      return this.http.get(ep,{headers: headers})
         .map(res => res.json());
     }
 
@@ -42,7 +42,7 @@ export class UploadDataService {
       if(this.isDev){
         return ep;
       } else {
-        return 'http://localhost:3000/'+ep;
+        return 'http://localhost:8080/'+ep;
       }
     }
 
