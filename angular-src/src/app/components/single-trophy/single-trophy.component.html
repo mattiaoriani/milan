@@ -18,12 +18,10 @@
           <swiper [config]="config">
             <div class="swiper-wrapper">
               <div class="swiper-slide" *ngFor="let img of winner.photoList">
-                  <img data-src="{{img.path}}" class="swiper-lazy">
-                  <div class="swiper-lazy-preloader"></div>
-                <!--<figure>
+                <figure>
                   <img class="story-img" [src]="img.path" alt="winner-img">
                   <figcaption>{{img.description}}</figcaption>
-                </figure>-->
+                </figure>
               </div>
             </div>
             <!-- Add Scrollbar -->
@@ -38,12 +36,10 @@
           <swiper [config]="config">
             <div class="swiper-wrapper">
               <div class="swiper-slide" *ngFor="let img of winner.photoList">
-                <!--<figure>
+                <figure>
                   <img class="story-img" [src]="img.path" alt="winner-img">
                   <figcaption>{{img.description}}</figcaption>
-                </figure>-->
-                <img data-src="{{img.path}}" class="swiper-lazy">
-                <div class="swiper-lazy-preloader"></div>
+                </figure>
               </div>
             </div>
             <!-- Add Scrollbar -->
