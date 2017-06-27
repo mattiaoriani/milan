@@ -1154,7 +1154,7 @@ var _a, _b;
 /***/ "../../../../../src/app/components/trophies/trophies.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"content\">\r\n  <h2 class=\"page-header\">Trophies</h2>\r\n\r\n  <div class=\"row\">\r\n    <div class=\"col-md-4\" *ngFor=\"let trophy of trophies\">\r\n      <button class=\"btn-dashboard\" (click)=\"getFilter(singleStory)\"\r\n        [ngStyle]=\"{'background-image': 'url(' + trophy.coverImg + ')'}\">{{trophy.name}}<div class=\"layer\"></div></button>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"content\">\r\n  <h2 class=\"page-header\">Trophies</h2>\r\n\r\n  <div class=\"row\">\r\n    <div class=\"col-md-4\" *ngFor=\"let trophy of trophies\">\r\n      <button class=\"btn-dashboard\" (click)=\"getFilter(trophy)\"\r\n        [ngStyle]=\"{'background-image': 'url(' + trophy.coverImg + ')'}\">{{trophy.name}}<div class=\"layer\"></div></button>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
