@@ -15,34 +15,38 @@
     <div id="myTabContent" class="tab-content">
       <ng-container *ngFor="let winner of trophy.trophiesWon;first as isFirst">
         <div *ngIf="isFirst" class="tab-pane fade active in" id="{{winner.year}}">
-          <swiper class="swiper-img" [config]="config">
+          <swiper [config]="config">
             <div class="swiper-wrapper">
-              <div class="swiper-slide winner-image" *ngFor="let img of winner.photoList">
+              <div class="swiper-slide" *ngFor="let img of winner.photoList">
                 <figure>
-                  <img class="winner-img" src={{img.path}} alt="winner-img">
+                  <img class="story-img" [src]="img.path" alt="winner-img">
                   <figcaption>{{img.description}}</figcaption>
                 </figure>
               </div>
             </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-scrollbar"></div>
+            <!-- Add Scrollbar -->
+              <div class="swiper-scrollbar"></div>
+              <!-- Add Arrows -->
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
           </swiper>
           <p class="description">{{winner.description}}</p>
         </div>
         <div *ngIf="!isFirst" class="tab-pane fade" id="{{winner.year}}">
-          <swiper class="swiper-img" [config]="config">
+          <swiper [config]="config">
             <div class="swiper-wrapper">
-              <div class="swiper-slide winner-image" *ngFor="let img of winner.photoList">
+              <div class="swiper-slide" *ngFor="let img of winner.photoList">
                 <figure>
-                  <img class="winner-img" src={{img.path}} alt="winner-img">
+                  <img class="story-img" [src]="img.path" alt="winner-img">
                   <figcaption>{{img.description}}</figcaption>
                 </figure>
               </div>
             </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-scrollbar"></div>
+            <!-- Add Scrollbar -->
+              <div class="swiper-scrollbar"></div>
+              <!-- Add Arrows -->
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
           </swiper>
           <p class="description">{{winner.description}}</p>
         </div>
