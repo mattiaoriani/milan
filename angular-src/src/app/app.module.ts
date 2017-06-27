@@ -39,7 +39,7 @@ const appRoutes: Routes =  [
   {path:'history', component: HistoryComponent},
   {path:'trophies', component: TrophiesComponent},
   {path:'hall-of-fame', component:HallOfFameComponent},
-  {path:'singlehistory/:id', component:SingleHistoryComponent},
+  {path:'singlehistory', component:SingleHistoryComponent},
   {path:'singlefootballer/:id', component:SingleFootballerComponent},
   {path:'singletrophy/:id', component:SingleTrophyComponent}
 ]

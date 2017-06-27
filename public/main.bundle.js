@@ -143,7 +143,7 @@ var appRoutes = [
     { path: 'history', component: __WEBPACK_IMPORTED_MODULE_13__components_history_history_component__["a" /* HistoryComponent */] },
     { path: 'trophies', component: __WEBPACK_IMPORTED_MODULE_14__components_trophies_trophies_component__["a" /* TrophiesComponent */] },
     { path: 'hall-of-fame', component: __WEBPACK_IMPORTED_MODULE_15__components_hall_of_fame_hall_of_fame_component__["a" /* HallOfFameComponent */] },
-    { path: 'singlehistory/:id', component: __WEBPACK_IMPORTED_MODULE_16__components_single_history_single_history_component__["a" /* SingleHistoryComponent */] },
+    { path: 'singlehistory', component: __WEBPACK_IMPORTED_MODULE_16__components_single_history_single_history_component__["a" /* SingleHistoryComponent */] },
     { path: 'singlefootballer/:id', component: __WEBPACK_IMPORTED_MODULE_17__components_single_footballer_single_footballer_component__["a" /* SingleFootballerComponent */] },
     { path: 'singletrophy/:id', component: __WEBPACK_IMPORTED_MODULE_18__components_single_trophy_single_trophy_component__["a" /* SingleTrophyComponent */] }
 ];
