@@ -25,7 +25,7 @@ export class SingleHistoryComponent implements OnInit {
   }
 
   ngOnInit() {
-       this.history = this.passData.getsingleComponent();
+       this.history = JSON.parse(this.passData.getsingleComponent());
       //this.router.params.subscribe(params => this.history = JSON.parse(params["id"]));
   }
 

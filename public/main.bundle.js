@@ -1045,7 +1045,7 @@ var SingleHistoryComponent = (function () {
         };
     }
     SingleHistoryComponent.prototype.ngOnInit = function () {
-        this.history = this.passData.getsingleComponent();
+        this.history = JSON.parse(this.passData.getsingleComponent());
         //this.router.params.subscribe(params => this.history = JSON.parse(params["id"]));
     };
     return SingleHistoryComponent;
