@@ -340,7 +340,7 @@ var _a, _b;
 /***/ "../../../../../src/app/components/history/history.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"content\">\r\n  <h2 class=\"page-header\">History</h2>\r\n  <ul class=\"timeline\" *ngFor=\"let singleStory of history;odd as isOdd\">\r\n    <li *ngIf=\"!isOdd\" >\r\n      <div class=\"tldate\"><p class=\"year\"><strong>{{singleStory.year.initial}}-{{singleStory.year.final}}</strong></p></div>\r\n      <div class=\"timeline-panel\" [routerLink]=\"['/singlehistory', getFilter(singleStory)]\">\r\n        <div class=\"tl-heading\">\r\n          <h4>{{singleStory.name}}</h4>\r\n        </div>\r\n        <div class=\"tl-body\">\r\n          <p>{{singleStory.description.small}}</p>\r\n          <img src={{singleStory.photoPath.normal}} alt=\"story-cover\">\r\n        </div>\r\n      </div>\r\n    </li>\r\n\r\n    <li class=\"timeline-inverted\" *ngIf=\"isOdd\">\r\n      <div class=\"tldate-odd\"><p class=\"year\"><strong>{{singleStory.year.initial}}-{{singleStory.year.final}}</strong></p></div>\r\n      <div class=\"timeline-panel\" [routerLink]=\"['/singlehistory', getFilter(singleStory)]\">\r\n        <div class=\"tl-heading\">\r\n          <h4>{{singleStory.name}}</h4>\r\n        </div>\r\n        <div class=\"tl-body\">\r\n          <p>{{singleStory.description.small}}</p>\r\n          <img src={{singleStory.photoPath.normal}} alt=\"story-cover\">\r\n        </div>\r\n      </div>\r\n    </li>\r\n  </ul>\r\n</div>\r\n"
+module.exports = "<div class=\"content\">\r\n  <h2 class=\"page-header\">History</h2>\r\n  <ul class=\"timeline\" *ngFor=\"let singleStory of history;odd as isOdd\">\r\n    <li *ngIf=\"!isOdd\" >\r\n      <div class=\"tldate\"><p class=\"year\"><strong>{{singleStory.year.initial}}-{{singleStory.year.final}}</strong></p></div>\r\n      <div class=\"timeline-panel\" (click)=\"getFilter(singleStory)\">\r\n        <div class=\"tl-heading\">\r\n          <h4>{{singleStory.name}}</h4>\r\n        </div>\r\n        <div class=\"tl-body\">\r\n          <p>{{singleStory.description.small}}</p>\r\n          <img src={{singleStory.photoPath.normal}} alt=\"story-cover\">\r\n        </div>\r\n      </div>\r\n    </li>\r\n\r\n    <li class=\"timeline-inverted\" *ngIf=\"isOdd\">\r\n      <div class=\"tldate-odd\"><p class=\"year\"><strong>{{singleStory.year.initial}}-{{singleStory.year.final}}</strong></p></div>\r\n      <div class=\"timeline-panel\" (click)=\"getFilter(singleStory)\">\r\n        <div class=\"tl-heading\">\r\n          <h4>{{singleStory.name}}</h4>\r\n        </div>\r\n        <div class=\"tl-body\">\r\n          <p>{{singleStory.description.small}}</p>\r\n          <img src={{singleStory.photoPath.normal}} alt=\"story-cover\">\r\n        </div>\r\n      </div>\r\n    </li>\r\n  </ul>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -369,6 +369,7 @@ module.exports = module.exports.toString();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_upload_data_service__ = __webpack_require__("../../../../../src/app/services/upload-data.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_pass_data_service__ = __webpack_require__("../../../../../src/app/services/pass-data.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HistoryComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -382,10 +383,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var HistoryComponent = (function () {
-    function HistoryComponent(uploadData, passData) {
+    function HistoryComponent(uploadData, passData, router) {
         this.uploadData = uploadData;
         this.passData = passData;
+        this.router = router;
     }
     HistoryComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -399,6 +402,8 @@ var HistoryComponent = (function () {
     HistoryComponent.prototype.getFilter = function (singleHistory) {
         //return JSON.stringify(singleHistory);
         this.passData.setsingleComponent(JSON.stringify(singleHistory));
+        console.log(singleHistory);
+        this.router.navigate(['/singlehistory']);
     };
     return HistoryComponent;
 }());
@@ -408,10 +413,10 @@ HistoryComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/history/history.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/history/history.component.scss")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_upload_data_service__["a" /* UploadDataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_upload_data_service__["a" /* UploadDataService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_pass_data_service__["a" /* PassDataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_pass_data_service__["a" /* PassDataService */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_upload_data_service__["a" /* UploadDataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_upload_data_service__["a" /* UploadDataService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_pass_data_service__["a" /* PassDataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_pass_data_service__["a" /* PassDataService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _c || Object])
 ], HistoryComponent);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=history.component.js.map
 
 /***/ }),
@@ -1046,6 +1051,7 @@ var SingleHistoryComponent = (function () {
     }
     SingleHistoryComponent.prototype.ngOnInit = function () {
         this.history = JSON.parse(this.passData.getsingleComponent());
+        console.log(this.history);
         //this.router.params.subscribe(params => this.history = JSON.parse(params["id"]));
     };
     return SingleHistoryComponent;
