@@ -41,7 +41,7 @@ const appRoutes: Routes =  [
   {path:'hall-of-fame', component:HallOfFameComponent},
   {path:'singlehistory', component:SingleHistoryComponent},
   {path:'singlefootballer/:id', component:SingleFootballerComponent},
-  {path:'singletrophy/:id', component:SingleTrophyComponent}
+  {path:'singletrophy/', component:SingleTrophyComponent}
 ]
 
 @NgModule({

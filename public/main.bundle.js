@@ -145,7 +145,7 @@ var appRoutes = [
     { path: 'hall-of-fame', component: __WEBPACK_IMPORTED_MODULE_15__components_hall_of_fame_hall_of_fame_component__["a" /* HallOfFameComponent */] },
     { path: 'singlehistory', component: __WEBPACK_IMPORTED_MODULE_16__components_single_history_single_history_component__["a" /* SingleHistoryComponent */] },
     { path: 'singlefootballer/:id', component: __WEBPACK_IMPORTED_MODULE_17__components_single_footballer_single_footballer_component__["a" /* SingleFootballerComponent */] },
-    { path: 'singletrophy/:id', component: __WEBPACK_IMPORTED_MODULE_18__components_single_trophy_single_trophy_component__["a" /* SingleTrophyComponent */] }
+    { path: 'singletrophy/', component: __WEBPACK_IMPORTED_MODULE_18__components_single_trophy_single_trophy_component__["a" /* SingleTrophyComponent */] }
 ];
 var AppModule = (function () {
     function AppModule() {
@@ -1101,6 +1101,7 @@ module.exports = module.exports.toString();
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_pass_data_service__ = __webpack_require__("../../../../../src/app/services/pass-data.service.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SingleTrophyComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1113,9 +1114,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var SingleTrophyComponent = (function () {
-    function SingleTrophyComponent(router) {
+    function SingleTrophyComponent(router, passData) {
         this.router = router;
+        this.passData = passData;
         this.config = {
             scrollbar: '.swiper-scrollbar',
             scrollbarHide: true,
@@ -1129,8 +1132,8 @@ var SingleTrophyComponent = (function () {
         };
     }
     SingleTrophyComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.router.params.subscribe(function (params) { return _this.trophy = JSON.parse(params["id"]); });
+        this.trophy = JSON.parse(this.passData.getsingleComponent());
+        //this.router.params.subscribe(params => this.trophy = JSON.parse(params["id"]));
     };
     return SingleTrophyComponent;
 }());
@@ -1140,10 +1143,10 @@ SingleTrophyComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/single-trophy/single-trophy.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/single-trophy/single-trophy.component.scss")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_pass_data_service__["a" /* PassDataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_pass_data_service__["a" /* PassDataService */]) === "function" && _b || Object])
 ], SingleTrophyComponent);
 
-var _a;
+var _a, _b;
 //# sourceMappingURL=single-trophy.component.js.map
 
 /***/ }),
@@ -1151,7 +1154,7 @@ var _a;
 /***/ "../../../../../src/app/components/trophies/trophies.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"content\">\r\n  <h2 class=\"page-header\">Trophies</h2>\r\n\r\n  <div class=\"row\">\r\n    <div class=\"col-md-4\" *ngFor=\"let trophy of trophies\">\r\n      <button class=\"btn-dashboard\" [routerLink]=\"['/singletrophy', getFilter(trophy)]\"\r\n        [ngStyle]=\"{'background-image': 'url(' + trophy.coverImg + ')'}\">{{trophy.name}}<div class=\"layer\"></div></button>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"content\">\r\n  <h2 class=\"page-header\">Trophies</h2>\r\n\r\n  <div class=\"row\">\r\n    <div class=\"col-md-4\" *ngFor=\"let trophy of trophies\">\r\n      <button class=\"btn-dashboard\" (click)=\"getFilter(singleStory)\"\r\n        [ngStyle]=\"{'background-image': 'url(' + trophy.coverImg + ')'}\">{{trophy.name}}<div class=\"layer\"></div></button>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1180,6 +1183,7 @@ module.exports = module.exports.toString();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_upload_data_service__ = __webpack_require__("../../../../../src/app/services/upload-data.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_pass_data_service__ = __webpack_require__("../../../../../src/app/services/pass-data.service.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TrophiesComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1193,10 +1197,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var TrophiesComponent = (function () {
-    function TrophiesComponent(uploadData, router) {
+    function TrophiesComponent(uploadData, router, passData) {
         this.uploadData = uploadData;
         this.router = router;
+        this.passData = passData;
     }
     TrophiesComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -1208,7 +1214,10 @@ var TrophiesComponent = (function () {
         });
     };
     TrophiesComponent.prototype.getFilter = function (singleTrophy) {
-        return JSON.stringify(singleTrophy);
+        //return JSON.stringify(singleTrophy);
+        this.passData.setsingleComponent(JSON.stringify(singleTrophy));
+        console.log(singleTrophy);
+        this.router.navigate(['/singletrophy']);
     };
     return TrophiesComponent;
 }());
@@ -1218,10 +1227,10 @@ TrophiesComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/trophies/trophies.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/trophies/trophies.component.scss")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_upload_data_service__["a" /* UploadDataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_upload_data_service__["a" /* UploadDataService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_upload_data_service__["a" /* UploadDataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_upload_data_service__["a" /* UploadDataService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_pass_data_service__["a" /* PassDataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_pass_data_service__["a" /* PassDataService */]) === "function" && _c || Object])
 ], TrophiesComponent);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=trophies.component.js.map
 
 /***/ }),

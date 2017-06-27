@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {UploadDataService} from '../../services/upload-data.service';
 import {Router} from '@angular/router';
+import {PassDataService} from '../../services/pass-data.service';
+
 
 @Component({
   selector: 'app-trophies',
@@ -11,7 +13,7 @@ export class TrophiesComponent implements OnInit {
 
   trophies:Array<String>;
 
-  constructor(private uploadData:UploadDataService,private router:Router) { }
+  constructor(private uploadData:UploadDataService,private router:Router,private passData:PassDataService) { }
 
   ngOnInit() {
     this.uploadData.getAllTrophies().subscribe(result => {
@@ -24,7 +26,10 @@ export class TrophiesComponent implements OnInit {
   }
 
   getFilter(singleTrophy){
-    return JSON.stringify(singleTrophy);
+    //return JSON.stringify(singleTrophy);
+    this.passData.setsingleComponent(JSON.stringify(singleTrophy));
+    console.log(singleTrophy);
+    this.router.navigate(['/singletrophy']);
   }
 
 }

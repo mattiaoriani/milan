@@ -3,7 +3,7 @@
 
   <div class="row">
     <div class="col-md-4" *ngFor="let trophy of trophies">
-      <button class="btn-dashboard" [routerLink]="['/singletrophy', getFilter(trophy)]"
+      <button class="btn-dashboard" (click)="getFilter(singleStory)"
         [ngStyle]="{'background-image': 'url(' + trophy.coverImg + ')'}">{{trophy.name}}<div class="layer"></div></button>
     </div>
   </div>

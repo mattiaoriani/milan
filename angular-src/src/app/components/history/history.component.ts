@@ -13,7 +13,7 @@ export class HistoryComponent implements OnInit {
 
   history:Array<String>;
 
-  constructor(private uploadData:UploadDataService,private passData:PassDataService,private router:Router,) { }
+  constructor(private uploadData:UploadDataService,private passData:PassDataService,private router:Router) { }
 
   ngOnInit() {
     this.uploadData.getAllStories().subscribe(result => {
