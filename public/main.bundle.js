@@ -1288,7 +1288,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var AuthService = (function () {
     function AuthService(http) {
         this.http = http;
-        this.isDev = true; // Change to false before deployment
+        this.isDev = false; // Change to false before deployment
     }
     AuthService.prototype.registerUser = function (user) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
@@ -1388,27 +1388,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var UploadDataService = (function () {
     function UploadDataService(http) {
         this.http = http;
-        this.isDev = true; // Change to false before deployment
+        this.isDev = false; // Change to false before deployment
     }
     UploadDataService.prototype.getAllFootballers = function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
         var ep = this.prepEndpoint('footballers/footballerInfo');
-        return this.http.get('http://localhost:3000/footballers/footballerInfo', { headers: headers })
+        return this.http.get(ep, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     UploadDataService.prototype.getAllTrophies = function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
         var ep = this.prepEndpoint('trophies/trophies');
-        return this.http.get('http://localhost:3000/trophies/trophies', { headers: headers })
+        return this.http.get(ep, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     UploadDataService.prototype.getAllStories = function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
         var ep = this.prepEndpoint('stories/stories');
-        return this.http.get('http://localhost:3000/stories/stories', { headers: headers })
+        return this.http.get(ep, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     UploadDataService.prototype.prepEndpoint = function (ep) {
@@ -1416,7 +1416,7 @@ var UploadDataService = (function () {
             return ep;
         }
         else {
-            return 'http://localhost:3000/' + ep;
+            return 'http://localhost:8080/' + ep;
         }
     };
     return UploadDataService;
