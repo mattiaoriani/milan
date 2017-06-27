@@ -18,9 +18,8 @@
           <swiper [config]="config">
             <div class="swiper-wrapper">
               <div class="swiper-slide" *ngFor="let img of winner.photoList">
-                <div data-background="{{img.path}}" class="swiper-lazy">
+                  <img data-src="{{img.path}}" class="swiper-lazy">
                   <div class="swiper-lazy-preloader"></div>
-                </div>
                 <!--<figure>
                   <img class="story-img" [src]="img.path" alt="winner-img">
                   <figcaption>{{img.description}}</figcaption>
@@ -43,9 +42,8 @@
                   <img class="story-img" [src]="img.path" alt="winner-img">
                   <figcaption>{{img.description}}</figcaption>
                 </figure>-->
-                <div data-background="{{img.path}}" class="swiper-lazy">
-                  <div class="swiper-lazy-preloader"></div>
-                </div>
+                <img data-src="{{img.path}}" class="swiper-lazy">
+                <div class="swiper-lazy-preloader"></div>
               </div>
             </div>
             <!-- Add Scrollbar -->
