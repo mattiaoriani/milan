@@ -13,16 +13,14 @@ export class SingleTrophyComponent implements OnInit {
   constructor(private router:ActivatedRoute) { }
 
   config: Object = {
-      scrollbar: '.swiper-scrollbar',
-      scrollbarHide: true,
-      slidesPerView: 'auto',
-      centeredSlides: false,
-      spaceBetween: 0,
-      grabCursor: true,
-      pagination: '.swiper-pagination',
-      paginationClickable: true,
-      nextButton: '.swiper-button-next',
-      prevButton: '.swiper-button-prev',
+    scrollbar: '.swiper-scrollbar',
+    scrollbarHide: true,
+    slidesPerView: 'auto',
+    centeredSlides: true,
+    grabCursor: true,
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    spaceBetween: 30
   };
 
 

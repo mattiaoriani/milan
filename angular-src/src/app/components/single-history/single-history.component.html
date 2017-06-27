@@ -4,20 +4,19 @@
   </h2>
 
   <div class="history-item">
-  <swiper [config]="config" class="swiper-img">
-    <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img class="story-img" src={{history.photoPath.normal}}>
-        </div>
-        <div class="swiper-slide" *ngFor="let photo of history.additionalPhotoPath">
-          <img class="story-img" src={{photo.path}} alt="story-img">
-        </div>
-    </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-scrollbar"></div>
-    <!-- Add Pagination -->
-    <div class="swiper-pagination"></div>
+  <swiper [config]="config">
+      <div class="swiper-wrapper">
+          <div class="swiper-slide" *ngFor="let photo of history.additionalPhotoPath">
+            <div [ngStyle]="{'background-image': 'url(' + photo.Path + ')'}">
+              <img class="story-img" [src]="photo.path" alt="story-img">
+            </div>
+          </div>
+      </div>
+      <!-- Add Scrollbar -->
+        <div class="swiper-scrollbar"></div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
   </swiper>
     <div>
       <p class="description">{{history.description.long}}</p>
