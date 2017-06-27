@@ -95,11 +95,12 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_single_trophy_single_trophy_component__ = __webpack_require__("../../../../../src/app/components/single-trophy/single-trophy.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_info_component_info_component_component__ = __webpack_require__("../../../../../src/app/components/info-component/info-component.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_validate_service__ = __webpack_require__("../../../../../src/app/services/validate.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__services_upload_data_service__ = __webpack_require__("../../../../../src/app/services/upload-data.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_23_angular2_flash_messages__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__guards_auth_guard__ = __webpack_require__("../../../../../src/app/guards/auth.guard.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__services_pass_data_service__ = __webpack_require__("../../../../../src/app/services/pass-data.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__services_upload_data_service__ = __webpack_require__("../../../../../src/app/services/upload-data.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_24_angular2_flash_messages__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__guards_auth_guard__ = __webpack_require__("../../../../../src/app/guards/auth.guard.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -132,11 +133,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var appRoutes = [
     { path: '', component: __WEBPACK_IMPORTED_MODULE_11__components_home_home_component__["a" /* HomeComponent */] },
     { path: 'register', component: __WEBPACK_IMPORTED_MODULE_10__components_register_register_component__["a" /* RegisterComponent */] },
     { path: 'login', component: __WEBPACK_IMPORTED_MODULE_9__components_login_login_component__["a" /* LoginComponent */] },
-    { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_12__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_24__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_12__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_25__guards_auth_guard__["a" /* AuthGuard */]] },
     { path: 'info', component: __WEBPACK_IMPORTED_MODULE_19__components_info_component_info_component_component__["a" /* InfoComponentComponent */] },
     { path: 'history', component: __WEBPACK_IMPORTED_MODULE_13__components_history_history_component__["a" /* HistoryComponent */] },
     { path: 'trophies', component: __WEBPACK_IMPORTED_MODULE_14__components_trophies_trophies_component__["a" /* TrophiesComponent */] },
@@ -173,10 +175,10 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
             __WEBPACK_IMPORTED_MODULE_3__angular_http__["HttpModule"],
             __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* RouterModule */].forRoot(appRoutes),
-            __WEBPACK_IMPORTED_MODULE_23_angular2_flash_messages__["FlashMessagesModule"],
+            __WEBPACK_IMPORTED_MODULE_24_angular2_flash_messages__["FlashMessagesModule"],
             __WEBPACK_IMPORTED_MODULE_6_angular2_useful_swiper__["SwiperModule"]
         ],
-        providers: [__WEBPACK_IMPORTED_MODULE_20__services_validate_service__["a" /* ValidateService */], __WEBPACK_IMPORTED_MODULE_21__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_24__guards_auth_guard__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_22__services_upload_data_service__["a" /* UploadDataService */]],
+        providers: [__WEBPACK_IMPORTED_MODULE_20__services_validate_service__["a" /* ValidateService */], __WEBPACK_IMPORTED_MODULE_22__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_25__guards_auth_guard__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_23__services_upload_data_service__["a" /* UploadDataService */], __WEBPACK_IMPORTED_MODULE_21__services_pass_data_service__["a" /* PassDataService */]],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
@@ -366,6 +368,7 @@ module.exports = module.exports.toString();
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_upload_data_service__ = __webpack_require__("../../../../../src/app/services/upload-data.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_pass_data_service__ = __webpack_require__("../../../../../src/app/services/pass-data.service.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HistoryComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -378,9 +381,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var HistoryComponent = (function () {
-    function HistoryComponent(uploadData) {
+    function HistoryComponent(uploadData, passData) {
         this.uploadData = uploadData;
+        this.passData = passData;
     }
     HistoryComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -392,7 +397,8 @@ var HistoryComponent = (function () {
         });
     };
     HistoryComponent.prototype.getFilter = function (singleHistory) {
-        return JSON.stringify(singleHistory);
+        //return JSON.stringify(singleHistory);
+        this.passData.setsingleComponent(JSON.stringify(singleHistory));
     };
     return HistoryComponent;
 }());
@@ -402,10 +408,10 @@ HistoryComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/history/history.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/history/history.component.scss")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_upload_data_service__["a" /* UploadDataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_upload_data_service__["a" /* UploadDataService */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_upload_data_service__["a" /* UploadDataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_upload_data_service__["a" /* UploadDataService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_pass_data_service__["a" /* PassDataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_pass_data_service__["a" /* PassDataService */]) === "function" && _b || Object])
 ], HistoryComponent);
 
-var _a;
+var _a, _b;
 //# sourceMappingURL=history.component.js.map
 
 /***/ }),
@@ -1007,6 +1013,7 @@ module.exports = module.exports.toString();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_upload_data_service__ = __webpack_require__("../../../../../src/app/services/upload-data.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_pass_data_service__ = __webpack_require__("../../../../../src/app/services/pass-data.service.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SingleHistoryComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1020,10 +1027,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var SingleHistoryComponent = (function () {
-    function SingleHistoryComponent(uploadData, router) {
+    function SingleHistoryComponent(uploadData, router, passData) {
         this.uploadData = uploadData;
         this.router = router;
+        this.passData = passData;
         this.config = {
             scrollbar: '.swiper-scrollbar',
             scrollbarHide: true,
@@ -1036,8 +1045,8 @@ var SingleHistoryComponent = (function () {
         };
     }
     SingleHistoryComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.router.params.subscribe(function (params) { return _this.history = JSON.parse(params["id"]); });
+        this.history = this.passData.getsingleComponent();
+        //this.router.params.subscribe(params => this.history = JSON.parse(params["id"]));
     };
     return SingleHistoryComponent;
 }());
@@ -1047,10 +1056,10 @@ SingleHistoryComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/single-history/single-history.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/single-history/single-history.component.scss")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_upload_data_service__["a" /* UploadDataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_upload_data_service__["a" /* UploadDataService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_upload_data_service__["a" /* UploadDataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_upload_data_service__["a" /* UploadDataService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_pass_data_service__["a" /* PassDataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_pass_data_service__["a" /* PassDataService */]) === "function" && _c || Object])
 ], SingleHistoryComponent);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=single-history.component.js.map
 
 /***/ }),
@@ -1357,6 +1366,43 @@ AuthService = __decorate([
 
 var _a;
 //# sourceMappingURL=auth.service.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/pass-data.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PassDataService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var PassDataService = (function () {
+    function PassDataService() {
+        this.singleComponent = "";
+    }
+    PassDataService.prototype.setsingleComponent = function (val) {
+        this.singleComponent = val;
+    };
+    PassDataService.prototype.getsingleComponent = function () {
+        return this.singleComponent;
+    };
+    return PassDataService;
+}());
+PassDataService = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [])
+], PassDataService);
+
+//# sourceMappingURL=pass-data.service.js.map
 
 /***/ }),
 

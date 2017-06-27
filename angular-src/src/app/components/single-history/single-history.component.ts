@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {UploadDataService} from '../../services/upload-data.service';
 import {ActivatedRoute } from '@angular/router';
+import {PassDataService} from '../../services/pass-data.service';
 
 @Component({
   selector: 'app-single-history',
@@ -11,7 +12,7 @@ export class SingleHistoryComponent implements OnInit {
 
   history:Object;
 
-  constructor(private uploadData:UploadDataService, private router:ActivatedRoute) { }
+  constructor(private uploadData:UploadDataService, private router:ActivatedRoute, private passData:PassDataService) { }
   config: Object = {
     scrollbar: '.swiper-scrollbar',
     scrollbarHide: true,
@@ -24,7 +25,8 @@ export class SingleHistoryComponent implements OnInit {
   }
 
   ngOnInit() {
-      this.router.params.subscribe(params => this.history = JSON.parse(params["id"]));
+       this.history = this.passData.getsingleComponent();
+      //this.router.params.subscribe(params => this.history = JSON.parse(params["id"]));
   }
 
 }

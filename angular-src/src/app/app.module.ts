@@ -22,6 +22,7 @@ import { SingleTrophyComponent } from './components/single-trophy/single-trophy.
 import { InfoComponentComponent } from './components/info-component/info-component.component';
 
 import {ValidateService} from './services/validate.service';
+import {PassDataService} from './services/pass-data.service';
 import {AuthService} from './services/auth.service';
 import {UploadDataService} from './services/upload-data.service';
 import {FlashMessagesModule} from 'angular2-flash-messages';
@@ -68,7 +69,7 @@ const appRoutes: Routes =  [
     FlashMessagesModule,
     SwiperModule
   ],
-  providers: [ValidateService, AuthService, AuthGuard,UploadDataService],
+  providers: [ValidateService, AuthService, AuthGuard, UploadDataService, PassDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
