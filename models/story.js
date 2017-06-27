@@ -64,5 +64,5 @@ module.exports.getUserByName = function(name, callback){
 }
 
 module.exports.getAllStories = function(bo, callback){
-  Story.find({},callback);
+  Story.find({},callback).sort({year.initial: 'desc'}).exec(function(err, docs) {});
 }
