@@ -6,7 +6,8 @@
       <p class="lead">Welcome to Casa</p>
         <a *ngIf="!authService.loggedIn()" class="btn btn-primary" [routerLink]="['/login']">Start the Tour</a>
         <a *ngIf="authService.loggedIn()" class="btn btn-primary" [routerLink]="['/dashboard']">Dashboard</a>
-        <a *ngIf="authService.loggedIn()" class="btn btn-default" [routerLink]="['/info']">Info</a>
+        <!--<a *ngIf="authService.loggedIn()" class="btn btn-default" [routerLink]="['/info']">Info</a>-->
+        <a class="btn btn-default" [routerLink]="['/info']">Info</a>
 
 
     </div>
