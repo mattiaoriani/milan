@@ -51,12 +51,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 
-var AppComponent = (function () {
-    function AppComponent() {
+let AppComponent = class AppComponent {
+    constructor() {
         this.title = 'app';
     }
-    return AppComponent;
-}());
+};
 AppComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-root',
@@ -134,7 +133,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var appRoutes = [
+const appRoutes = [
     { path: '', component: __WEBPACK_IMPORTED_MODULE_11__components_home_home_component__["a" /* HomeComponent */] },
     { path: 'register', component: __WEBPACK_IMPORTED_MODULE_10__components_register_register_component__["a" /* RegisterComponent */] },
     { path: 'login', component: __WEBPACK_IMPORTED_MODULE_9__components_login_login_component__["a" /* LoginComponent */] },
@@ -147,11 +146,8 @@ var appRoutes = [
     { path: 'singlefootballer/:id', component: __WEBPACK_IMPORTED_MODULE_17__components_single_footballer_single_footballer_component__["a" /* SingleFootballerComponent */] },
     { path: 'singletrophy', component: __WEBPACK_IMPORTED_MODULE_18__components_single_trophy_single_trophy_component__["a" /* SingleTrophyComponent */] }
 ];
-var AppModule = (function () {
-    function AppModule() {
-    }
-    return AppModule;
-}());
+let AppModule = class AppModule {
+};
 AppModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
         declarations: [
@@ -228,13 +224,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-var DashboardComponent = (function () {
-    function DashboardComponent() {
+let DashboardComponent = class DashboardComponent {
+    constructor() { }
+    ngOnInit() {
     }
-    DashboardComponent.prototype.ngOnInit = function () {
-    };
-    return DashboardComponent;
-}());
+};
 DashboardComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-dashboard',
@@ -293,8 +287,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var HallOfFameComponent = (function () {
-    function HallOfFameComponent(uploadData, router) {
+let HallOfFameComponent = class HallOfFameComponent {
+    constructor(uploadData, router) {
         this.uploadData = uploadData;
         this.router = router;
         this.config = {
@@ -305,24 +299,22 @@ var HallOfFameComponent = (function () {
             spaceBetween: 0
         };
     }
-    HallOfFameComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.uploadData.getAllFootballers().subscribe(function (result) {
-            _this.footballers = result.footballer;
-        }, function (err) {
+    ngOnInit() {
+        this.uploadData.getAllFootballers().subscribe(result => {
+            this.footballers = result.footballer;
+        }, err => {
             console.log(err);
             return false;
         });
-    };
-    HallOfFameComponent.prototype.getPlayerCoverImg = function (footballer) {
+    }
+    getPlayerCoverImg(footballer) {
         console.log(footballer.coverImg);
         return footballer.coverImg;
-    };
-    HallOfFameComponent.prototype.getFilter = function (footballer) {
+    }
+    getFilter(footballer) {
         return JSON.stringify(footballer);
-    };
-    return HallOfFameComponent;
-}());
+    }
+};
 HallOfFameComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-hall-of-fame',
@@ -384,29 +376,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var HistoryComponent = (function () {
-    function HistoryComponent(uploadData, passData, router) {
+let HistoryComponent = class HistoryComponent {
+    constructor(uploadData, passData, router) {
         this.uploadData = uploadData;
         this.passData = passData;
         this.router = router;
     }
-    HistoryComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.uploadData.getAllStories().subscribe(function (result) {
-            _this.history = result.stories;
-        }, function (err) {
+    ngOnInit() {
+        this.uploadData.getAllStories().subscribe(result => {
+            this.history = result.stories;
+        }, err => {
             console.log(err);
             return false;
         });
-    };
-    HistoryComponent.prototype.getFilter = function (singleHistory) {
+    }
+    getFilter(singleHistory) {
         //return JSON.stringify(singleHistory);
         this.passData.setsingleComponent(JSON.stringify(singleHistory));
         console.log(singleHistory);
         this.router.navigate(['/singlehistory']);
-    };
-    return HistoryComponent;
-}());
+    }
+};
 HistoryComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-history',
@@ -424,7 +414,7 @@ var _a, _b, _c;
 /***/ "../../../../../src/app/components/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"homepage\">\r\n  <div class=\"jumbotron text-center\">\r\n    <div class=\"jumbotron-content\">\r\n      <img class=\"logo\" src=\"../../assets/logo.png\" alt=\"logo\">\r\n      <h1 class=\"title\">CASA MILAN Museum</h1>\r\n      <p class=\"lead\">Welcome to Casa</p>\r\n        <a *ngIf=\"!authService.loggedIn()\" class=\"btn btn-primary\" [routerLink]=\"['/login']\">Start the Tour</a>\r\n        <a *ngIf=\"authService.loggedIn()\" class=\"btn btn-primary\" [routerLink]=\"['/dashboard']\">Dashboard</a>\r\n        <!--<a *ngIf=\"authService.loggedIn()\" class=\"btn btn-default\" [routerLink]=\"['/info']\">Info</a>-->\r\n        <a class=\"btn btn-default\" [routerLink]=\"['/info']\">Info</a>\r\n\r\n\r\n    </div>\r\n  </div>\r\n\r\n  <section>\r\n    <div class=\"container\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-4\">\r\n          <div class=\"info\">\r\n          <img class=\"img-feature\" src=\"../../assets/home/history.png\" alt=\"history-icon\">\r\n          <h3 class=\"features\">History</h3>\r\n          <p class=\"subfeatures\">You can know our history.</p>\r\n        </div>\r\n        </div>\r\n        <div class=\"col-md-4\">\r\n          <img class=\"img-feature\" src=\"../../assets/home/trophy.png\" alt=\"trophies-icon\">\r\n          <h3 class=\"features\">Trophies</h3>\r\n          <p class=\"subfeatures\">Explore our trophies.</p>\r\n        </div>\r\n        <div class=\"col-md-4\">\r\n          <img class=\"img-feature\" src=\"../../assets/home/halloffame.png\" alt=\"hall-of-fame-icon\">\r\n          <h3 class=\"features\">Hall Of Fame</h3>\r\n          <p class=\"subfeatures\">Admire our best players.</p>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </section>\r\n</div>\r\n"
+module.exports = "<div class=\"homepage\">\r\n  <div class=\"jumbotron text-center\">\r\n    <div class=\"jumbotron-content\">\r\n      <img class=\"logo\" src=\"../../assets/logo.png\" alt=\"logo\">\r\n      <h1 class=\"title\">CASA MILAN Museum</h1>\r\n      <p class=\"lead\">Welcome to Casa</p>\r\n        <a *ngIf=\"!authService.loggedIn()\" class=\"btn btn-primary\" [routerLink]=\"['/login']\">Start the Tour</a>\r\n        <a *ngIf=\"authService.loggedIn()\" class=\"btn btn-primary\" [routerLink]=\"['/dashboard']\">Dashboard</a>\r\n        <a *ngIf=\"authService.loggedIn()\" class=\"btn btn-default\" [routerLink]=\"['/info']\">Info</a>\r\n\r\n\r\n    </div>\r\n  </div>\r\n\r\n  <section>\r\n    <div class=\"container\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-4\">\r\n          <div class=\"info\">\r\n          <img class=\"img-feature\" src=\"../../assets/home/history.png\" alt=\"history-icon\">\r\n          <h3 class=\"features\">History</h3>\r\n          <p class=\"subfeatures\">You can know our history.</p>\r\n        </div>\r\n        </div>\r\n        <div class=\"col-md-4\">\r\n          <img class=\"img-feature\" src=\"../../assets/home/trophy.png\" alt=\"trophies-icon\">\r\n          <h3 class=\"features\">Trophies</h3>\r\n          <p class=\"subfeatures\">Explore our trophies.</p>\r\n        </div>\r\n        <div class=\"col-md-4\">\r\n          <img class=\"img-feature\" src=\"../../assets/home/halloffame.png\" alt=\"hall-of-fame-icon\">\r\n          <h3 class=\"features\">Hall Of Fame</h3>\r\n          <p class=\"subfeatures\">Admire our best players.</p>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </section>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -464,14 +454,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-var HomeComponent = (function () {
-    function HomeComponent(authService) {
+let HomeComponent = class HomeComponent {
+    constructor(authService) {
         this.authService = authService;
     }
-    HomeComponent.prototype.ngOnInit = function () {
-    };
-    return HomeComponent;
-}());
+    ngOnInit() {
+    }
+};
 HomeComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-home',
@@ -527,13 +516,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-var InfoComponentComponent = (function () {
-    function InfoComponentComponent() {
+let InfoComponentComponent = class InfoComponentComponent {
+    constructor() { }
+    ngOnInit() {
     }
-    InfoComponentComponent.prototype.ngOnInit = function () {
-    };
-    return InfoComponentComponent;
-}());
+};
 InfoComponentComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-info-component',
@@ -595,51 +582,49 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var LoginComponent = (function () {
-    function LoginComponent(authService, router, flashMessage) {
+let LoginComponent = class LoginComponent {
+    constructor(authService, router, flashMessage) {
         this.authService = authService;
         this.router = router;
         this.flashMessage = flashMessage;
         this.closable = true;
         this.visibleChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
     }
-    LoginComponent.prototype.ngOnInit = function () {
-    };
-    LoginComponent.prototype.onLoginSubmit = function () {
-        var _this = this;
-        var user = {
+    ngOnInit() {
+    }
+    onLoginSubmit() {
+        const user = {
             username: this.username,
             password: this.password
         };
-        this.authService.authenticateUser(user).subscribe(function (data) {
+        this.authService.authenticateUser(user).subscribe(data => {
             if (data.success) {
-                _this.authService.storeUserData(data.token, data.user);
-                _this.flashMessage.show('You are now logged in', {
+                this.authService.storeUserData(data.token, data.user);
+                this.flashMessage.show('You are now logged in', {
                     cssClass: 'alert-success',
                     timeout: 3000
                 });
-                if (_this.authService.isAdmin()) {
-                    _this.router.navigate(['register']);
+                if (this.authService.isAdmin()) {
+                    this.router.navigate(['register']);
                 }
                 else {
-                    _this.router.navigate(['dashboard']);
+                    this.router.navigate(['dashboard']);
                 }
             }
             else {
-                _this.flashMessage.show(data.msg, {
+                this.flashMessage.show(data.msg, {
                     cssClass: 'alert-danger',
                     timeout: 3000
                 });
-                _this.router.navigate(['login']);
+                this.router.navigate(['login']);
             }
         });
-    };
-    LoginComponent.prototype.close = function () {
+    }
+    close() {
         this.visible = false;
         this.visibleChange.emit(this.visible);
-    };
-    return LoginComponent;
-}());
+    }
+};
 __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
     __metadata("design:type", Object)
@@ -725,16 +710,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var NavbarComponent = (function () {
-    function NavbarComponent(authService, router, flashMessage) {
+let NavbarComponent = class NavbarComponent {
+    constructor(authService, router, flashMessage) {
         this.authService = authService;
         this.router = router;
         this.flashMessage = flashMessage;
     }
-    NavbarComponent.prototype.ngOnInit = function () {
+    ngOnInit() {
         console.log(this.div.nativeElement);
-    };
-    NavbarComponent.prototype.onLogoutClick = function () {
+    }
+    onLogoutClick() {
         this.authService.logout();
         this.flashMessage.show('You are logged out', {
             cssClass: 'alert-success',
@@ -742,12 +727,11 @@ var NavbarComponent = (function () {
         });
         this.router.navigate(['']);
         return false;
-    };
-    NavbarComponent.prototype.toggleNavBar = function () {
+    }
+    toggleNavBar() {
         $('.navbar-collapse').collapse('hide');
-    };
-    return NavbarComponent;
-}());
+    }
+};
 __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('pino'),
     __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _a || Object)
@@ -816,18 +800,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var RegisterComponent = (function () {
-    function RegisterComponent(validateService, flashMessage, authService, router) {
+let RegisterComponent = class RegisterComponent {
+    constructor(validateService, flashMessage, authService, router) {
         this.validateService = validateService;
         this.flashMessage = flashMessage;
         this.authService = authService;
         this.router = router;
     }
-    RegisterComponent.prototype.ngOnInit = function () {
-    };
-    RegisterComponent.prototype.onRegisterSubmit = function () {
-        var _this = this;
-        var user = {
+    ngOnInit() {
+    }
+    onRegisterSubmit() {
+        const user = {
             name: this.name,
             email: this.email,
             username: this.username,
@@ -844,19 +827,18 @@ var RegisterComponent = (function () {
             return false;
         }
         // Register user
-        this.authService.registerUser(user).subscribe(function (data) {
+        this.authService.registerUser(user).subscribe(data => {
             if (data.success) {
-                _this.flashMessage.show('You are now registered and can log in', { cssClass: 'alert-success', timeout: 3000 });
-                _this.router.navigate(['/login']);
+                this.flashMessage.show('You are now registered and can log in', { cssClass: 'alert-success', timeout: 3000 });
+                this.router.navigate(['/login']);
             }
             else {
-                _this.flashMessage.show('Something went wrong', { cssClass: 'alert-danger', timeout: 3000 });
-                _this.router.navigate(['/register']);
+                this.flashMessage.show('Something went wrong', { cssClass: 'alert-danger', timeout: 3000 });
+                this.router.navigate(['/register']);
             }
         });
-    };
-    return RegisterComponent;
-}());
+    }
+};
 RegisterComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-register',
@@ -916,8 +898,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var SingleFootballerComponent = (function () {
-    function SingleFootballerComponent(uploadData, router) {
+let SingleFootballerComponent = class SingleFootballerComponent {
+    constructor(uploadData, router) {
         this.uploadData = uploadData;
         this.router = router;
         this.config = {
@@ -928,25 +910,24 @@ var SingleFootballerComponent = (function () {
             spaceBetween: 0
         };
     }
-    SingleFootballerComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.router.params.subscribe(function (params) { return _this.footballer = JSON.parse(params["id"]); });
-    };
-    SingleFootballerComponent.prototype.getSumAppearences = function (footballer) {
-        var total = 0;
+    ngOnInit() {
+        this.router.params.subscribe(params => this.footballer = JSON.parse(params["id"]));
+    }
+    getSumAppearences(footballer) {
+        let total = 0;
         for (var i = 0; i < footballer["statics"].length; i++) {
             total += footballer["statics"][i]["apperances"];
         }
         return total;
-    };
-    SingleFootballerComponent.prototype.getSumGoals = function (footballer) {
-        var total = 0;
+    }
+    getSumGoals(footballer) {
+        let total = 0;
         for (var i = 0; i < footballer["statics"].length; i++) {
             total += footballer["statics"][i]["goals"];
         }
         return total;
-    };
-    SingleFootballerComponent.prototype.getThrophyPath = function (trophy) {
+    }
+    getThrophyPath(trophy) {
         switch (trophy.name) {
             case "Scudetto Serie A": return "../../assets/hall-of-fame/scudetto.png";
             case "Champions League": return "../../assets/hall-of-fame/championsleague.png";
@@ -960,8 +941,8 @@ var SingleFootballerComponent = (function () {
                 return "../../assets/hall-of-fame/presenze.png";
                 ;
         }
-    };
-    SingleFootballerComponent.prototype.checkIfHasThrophy = function (footballer) {
+    }
+    checkIfHasThrophy(footballer) {
         var size = Object.keys(footballer["trophiesWon"]).length;
         if (size == 0) {
             return false;
@@ -969,9 +950,8 @@ var SingleFootballerComponent = (function () {
         else {
             return true;
         }
-    };
-    return SingleFootballerComponent;
-}());
+    }
+};
 SingleFootballerComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-single-footballer',
@@ -1033,8 +1013,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var SingleHistoryComponent = (function () {
-    function SingleHistoryComponent(uploadData, router, passData) {
+let SingleHistoryComponent = class SingleHistoryComponent {
+    constructor(uploadData, router, passData) {
         this.uploadData = uploadData;
         this.router = router;
         this.passData = passData;
@@ -1049,13 +1029,12 @@ var SingleHistoryComponent = (function () {
             spaceBetween: 30
         };
     }
-    SingleHistoryComponent.prototype.ngOnInit = function () {
+    ngOnInit() {
         this.history = JSON.parse(this.passData.getsingleComponent());
         console.log(this.history);
         //this.router.params.subscribe(params => this.history = JSON.parse(params["id"]));
-    };
-    return SingleHistoryComponent;
-}());
+    }
+};
 SingleHistoryComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-single-history',
@@ -1115,8 +1094,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var SingleTrophyComponent = (function () {
-    function SingleTrophyComponent(router, passData) {
+let SingleTrophyComponent = class SingleTrophyComponent {
+    constructor(router, passData) {
         this.router = router;
         this.passData = passData;
         this.config = {
@@ -1131,12 +1110,11 @@ var SingleTrophyComponent = (function () {
             spaceBetween: 30
         };
     }
-    SingleTrophyComponent.prototype.ngOnInit = function () {
+    ngOnInit() {
         this.trophy = JSON.parse(this.passData.getsingleComponent());
         //this.router.params.subscribe(params => this.trophy = JSON.parse(params["id"]));
-    };
-    return SingleTrophyComponent;
-}());
+    }
+};
 SingleTrophyComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-single-trophy',
@@ -1198,29 +1176,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var TrophiesComponent = (function () {
-    function TrophiesComponent(uploadData, router, passData) {
+let TrophiesComponent = class TrophiesComponent {
+    constructor(uploadData, router, passData) {
         this.uploadData = uploadData;
         this.router = router;
         this.passData = passData;
     }
-    TrophiesComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.uploadData.getAllTrophies().subscribe(function (result) {
-            _this.trophies = result.trophies;
-        }, function (err) {
+    ngOnInit() {
+        this.uploadData.getAllTrophies().subscribe(result => {
+            this.trophies = result.trophies;
+        }, err => {
             console.log(err);
             return false;
         });
-    };
-    TrophiesComponent.prototype.getFilter = function (singleTrophy) {
+    }
+    getFilter(singleTrophy) {
         //return JSON.stringify(singleTrophy);
         this.passData.setsingleComponent(JSON.stringify(singleTrophy));
         console.log(singleTrophy);
         this.router.navigate(['/singletrophy']);
-    };
-    return TrophiesComponent;
-}());
+    }
+};
 TrophiesComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-trophies',
@@ -1255,12 +1231,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var AuthGuard = (function () {
-    function AuthGuard(authService, router) {
+let AuthGuard = class AuthGuard {
+    constructor(authService, router) {
         this.authService = authService;
         this.router = router;
     }
-    AuthGuard.prototype.canActivate = function () {
+    canActivate() {
         if (this.authService.loggedIn()) {
             return true;
         }
@@ -1268,9 +1244,8 @@ var AuthGuard = (function () {
             this.router.navigate(['/login']);
             return false;
         }
-    };
-    return AuthGuard;
-}());
+    }
+};
 AuthGuard = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _b || Object])
@@ -1305,48 +1280,48 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var AuthService = (function () {
-    function AuthService(http) {
+let AuthService = class AuthService {
+    constructor(http) {
         this.http = http;
         this.isDev = true; // Change to false before deployment
     }
-    AuthService.prototype.registerUser = function (user) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+    registerUser(user) {
+        let headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        var ep = this.prepEndpoint('users/register');
+        let ep = this.prepEndpoint('users/register');
         return this.http.post(ep, user, { headers: headers })
-            .map(function (res) { return res.json(); });
-    };
-    AuthService.prototype.authenticateUser = function (user) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+            .map(res => res.json());
+    }
+    authenticateUser(user) {
+        let headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        var ep = this.prepEndpoint('users/authenticate');
+        let ep = this.prepEndpoint('users/authenticate');
         return this.http.post(ep, user, { headers: headers })
-            .map(function (res) { return res.json(); });
-    };
-    AuthService.prototype.getProfile = function () {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+            .map(res => res.json());
+    }
+    getProfile() {
+        let headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         this.loadToken();
         headers.append('Authorization', this.authToken);
         headers.append('Content-Type', 'application/json');
-        var ep = this.prepEndpoint('users/profile');
+        let ep = this.prepEndpoint('users/profile');
         return this.http.get(ep, { headers: headers })
-            .map(function (res) { return res.json(); });
-    };
-    AuthService.prototype.storeUserData = function (token, user) {
+            .map(res => res.json());
+    }
+    storeUserData(token, user) {
         localStorage.setItem('id_token', token);
         localStorage.setItem('user', JSON.stringify(user));
         this.authToken = token;
         this.user = user;
-    };
-    AuthService.prototype.loadToken = function () {
-        var token = localStorage.getItem('id_token');
+    }
+    loadToken() {
+        const token = localStorage.getItem('id_token');
         this.authToken = token;
-    };
-    AuthService.prototype.loggedIn = function () {
+    }
+    loggedIn() {
         return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3_angular2_jwt__["tokenNotExpired"])('id_token');
-    };
-    AuthService.prototype.isAdmin = function () {
+    }
+    isAdmin() {
         if (localStorage.getItem('user') === null) {
             return false;
         }
@@ -1358,22 +1333,21 @@ var AuthService = (function () {
                 return false;
             }
         }
-    };
-    AuthService.prototype.logout = function () {
+    }
+    logout() {
         this.authToken = null;
         this.user = null;
         localStorage.clear();
-    };
-    AuthService.prototype.prepEndpoint = function (ep) {
+    }
+    prepEndpoint(ep) {
         if (this.isDev) {
             return ep;
         }
         else {
             return 'http://localhost:8080/' + ep;
         }
-    };
-    return AuthService;
-}());
+    }
+};
 AuthService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]) === "function" && _a || Object])
@@ -1400,18 +1374,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-var PassDataService = (function () {
-    function PassDataService() {
+let PassDataService = class PassDataService {
+    constructor() {
         this.singleComponent = "";
     }
-    PassDataService.prototype.setsingleComponent = function (val) {
+    setsingleComponent(val) {
         this.singleComponent = val;
-    };
-    PassDataService.prototype.getsingleComponent = function () {
+    }
+    getsingleComponent() {
         return this.singleComponent;
-    };
-    return PassDataService;
-}());
+    }
+};
 PassDataService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
     __metadata("design:paramtypes", [])
@@ -1442,42 +1415,41 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var UploadDataService = (function () {
-    function UploadDataService(http) {
+let UploadDataService = class UploadDataService {
+    constructor(http) {
         this.http = http;
         this.isDev = true; // Change to false before deployment
     }
-    UploadDataService.prototype.getAllFootballers = function () {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+    getAllFootballers() {
+        let headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        var ep = this.prepEndpoint('footballers/footballerInfo');
+        let ep = this.prepEndpoint('footballers/footballerInfo');
         return this.http.get(ep, { headers: headers })
-            .map(function (res) { return res.json(); });
-    };
-    UploadDataService.prototype.getAllTrophies = function () {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+            .map(res => res.json());
+    }
+    getAllTrophies() {
+        let headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        var ep = this.prepEndpoint('trophies/trophies');
+        let ep = this.prepEndpoint('trophies/trophies');
         return this.http.get(ep, { headers: headers })
-            .map(function (res) { return res.json(); });
-    };
-    UploadDataService.prototype.getAllStories = function () {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+            .map(res => res.json());
+    }
+    getAllStories() {
+        let headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        var ep = this.prepEndpoint('stories/stories');
+        let ep = this.prepEndpoint('stories/stories');
         return this.http.get(ep, { headers: headers })
-            .map(function (res) { return res.json(); });
-    };
-    UploadDataService.prototype.prepEndpoint = function (ep) {
+            .map(res => res.json());
+    }
+    prepEndpoint(ep) {
         if (this.isDev) {
             return ep;
         }
         else {
             return 'http://localhost:8080/' + ep;
         }
-    };
-    return UploadDataService;
-}());
+    }
+};
 UploadDataService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]) === "function" && _a || Object])
@@ -1504,23 +1476,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-var ValidateService = (function () {
-    function ValidateService() {
-    }
-    ValidateService.prototype.validateRegister = function (user) {
+let ValidateService = class ValidateService {
+    constructor() { }
+    validateRegister(user) {
         if (user.name == undefined || user.email == undefined || user.username == undefined || user.password == undefined) {
             return false;
         }
         else {
             return true;
         }
-    };
-    ValidateService.prototype.validateEmail = function (email) {
-        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    }
+    validateEmail(email) {
+        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(email);
-    };
-    return ValidateService;
-}());
+    }
+};
 ValidateService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
     __metadata("design:paramtypes", [])
@@ -1590,15 +1560,16 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAA1CAYAAADW
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
 // The file contents for the current environment will overwrite these during build.
 // The build system defaults to the dev environment which uses `environment.ts`, but if you do
 // `ng build --env=prod` then `environment.prod.ts` will be used instead.
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 // The file contents for the current environment will overwrite these during build.
-var environment = {
+const environment = {
     production: false
 };
+/* harmony export (immutable) */ __webpack_exports__["a"] = environment;
+
 //# sourceMappingURL=environment.js.map
 
 /***/ }),
